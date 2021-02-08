@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Etat]
+(
+	[IdEtat] INT NOT NULL IDENTITY,
+	[Label] NVARCHAR (50) NOT NULL,
+	PRIMARY KEY CLUSTERED ([IdEtat]),
+)

@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[Marque]
+(
+	[IdMarque] INT NOT NULL IDENTITY,
+	[Nom] NVARCHAR (150) NOT NULL, 
+	[Pays] NVARCHAR(50) NOT NULL, 
+    PRIMARY KEY CLUSTERED ([IdMarque] ASC)
+
+)
