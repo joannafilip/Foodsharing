@@ -41,6 +41,9 @@
     </div><!-- end container -->
 </section>
 <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAkADq7R0xf6ami9YirAM1N-yl7hdnYBhM "></script>
-@Scripts.Render("~/bundles/map")
+@section customscripts
+{
+    @Scripts.Render("~/bundles/map")
+}
 
 <!-- MAP & CONTACT -->

@@ -146,7 +146,7 @@ a {
     line-height: 1;
     padding: 0.9rem 0 0.8rem;
     text-transform: capitalize;
-    color: #121212;
+    color:  #121212 !important;
 }
 
 .dropdown-toggle::after {

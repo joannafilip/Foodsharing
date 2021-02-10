@@ -38,5 +38,11 @@ namespace Foodsharing.Controllers
 
             return View();
         }
+        public ActionResult MyAccount()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
     }
 }
