@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using Foodsharing.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -26,11 +28,11 @@ namespace Foodsharing.Controllers
 
             return View();
         }
-        public ActionResult Food()
+        public ActionResult Product()
         {
-            ViewBag.Message = "Your contact page.";
+            ProductViewModel productViewModel = new ProductViewModel();
 
-            return View();
+            return View(productViewModel);
         }
         public ActionResult Blog()
         {
