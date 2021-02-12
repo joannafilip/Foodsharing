@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fodsharing.DAL.Repositories
+namespace Foodsharing.DAL.Repositories
 {
     public interface IConcreteRepository<T>
     {

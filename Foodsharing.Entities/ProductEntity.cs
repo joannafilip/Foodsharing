@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Foodsharing.Repositories
+namespace Foodsharing.Entities
 {
-    public class Class1
+    public class ProductEntity
     {
     }
 }
