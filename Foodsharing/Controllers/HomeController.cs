@@ -12,7 +12,8 @@ namespace Foodsharing.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            ProductViewModel productViewModel = new ProductViewModel();
+            return View(productViewModel);
         }
 
         public ActionResult About()
@@ -36,9 +37,8 @@ namespace Foodsharing.Controllers
         }
         public ActionResult Blog()
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            ProductViewModel productViewModel = new ProductViewModel();
+            return View(productViewModel);
         }
         public ActionResult MyAccount()
         {
