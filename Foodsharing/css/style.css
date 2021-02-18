@@ -48,7 +48,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: 700;
+    font-weight: 900;
     line-height: 1.4;
     color: #111111;
 }
@@ -142,7 +142,7 @@ a {
 .navbar-inverse .navbar-nav .nav-link,
 .navbar-nav .nav-link {
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 900;
     line-height: 1;
     padding: 0.9rem 0 0.8rem;
     text-transform: capitalize;
@@ -1356,7 +1356,7 @@ hr.invis3 {
     border: 1px dashed #dadada;
     border-radius: 0;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 900;
     line-height: 1;
     letter-spacing: 0.3px;
     margin-bottom: 1.4rem;
@@ -1373,6 +1373,11 @@ hr.invis3 {
     padding-top: 1rem
 }
 
+.topsearch text-right {
+    display: flex;
+    justify-content: space-between;
+    margin-left : 10%;
+}
 .search-form .form-control {
     border-radius: 0;
     margin-bottom: 1.4rem;

@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Foodsharing.Models
 {
-    public class ProductContent
+    public class MainImageContent
     {
-
-        private string _title, _image, _text, _type;
-        private DateTime _datePeremption;
-        private bool _bio;
-        private int _utilisateur;
+        private string _title, _image, _type, _autor;
+        private DateTime _date;
+   
         public string Title
         {
             get
@@ -36,18 +35,6 @@ namespace Foodsharing.Models
                 _image = value;
             }
         }
-        public string Text
-        {
-            get
-            {
-                return _text;
-            }
-
-            set
-            {
-                _text = value;
-            }
-        }
         public string Type
         {
             get
@@ -60,43 +47,29 @@ namespace Foodsharing.Models
                 _type = value;
             }
         }
-        public DateTime DatePeremption
+        public DateTime Date
         {
             get
             {
-                return _datePeremption;
+                return _date;
             }
 
             set
             {
-                _datePeremption = value;
+                _date = value;
             }
         }
-        public bool Bio
+        public string Autor
         {
             get
             {
-                return _bio;
+                return _autor;
             }
 
             set
             {
-                _bio = value;
+                _autor = value;
             }
         }
-        public int Utilisateur
-        {
-            get
-            {
-                return _utilisateur;
-            }
-
-            set
-            {
-                _utilisateur = value;
-            }
-        }
-
-
     }
 }

@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[PriseProduit]
 (
-	[IdPriseProduit] INT NOT NULL PRIMARY KEY, 
+	[IdPriseProduit] INT NOT NULL, 
     [IdUtilisateur] INT NOT NULL, 
     [IdProduit] INT NOT NULL, 
     [DatePrise] DATETIME2 NOT NULL,

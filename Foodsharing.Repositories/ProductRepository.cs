@@ -22,7 +22,9 @@ namespace Foodsharing.Repositories
 
         public List<ProductEntity> Get()
         {
-            throw new NotImplementedException();
+            string requete = "Select * from Produit";
+
+            return base.Get(requete);
         }
 
         public ProductEntity GetOne(int PK)

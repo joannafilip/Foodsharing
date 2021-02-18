@@ -19,6 +19,7 @@ p,
 .header .dropdown-menu,
 .navbar-nav .nav-link {
     font-family: 'Droid Sans', serif;
+    
 }
 
 .topbar-section {
@@ -39,6 +40,7 @@ p,
 	font-weight: bold;
 }
 
+
 .newsletter-widget .form-inline .form-control {
 	height: 54px;
 }
@@ -48,7 +50,7 @@ p,
 }
 
 .navbar-inverse .navbar-nav .nav-link, .navbar-nav .nav-link {
-	font-weight: 400;
+    font-weight: 900;
 }
 
 .blog-meta span {

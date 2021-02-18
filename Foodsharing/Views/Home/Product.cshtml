@@ -21,31 +21,9 @@
         <div class="row">
             <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                 <div class="page-wrapper">
-                    <div class="blog-list clearfix">
-                        @foreach (Foodsharing.Models.ProductContent item in Model.Product)
-                        {
-                            <div class="blog-box row">
-                                <div class="col-md-4">
-                                    <div class="post-media">
-                                        <a href="garden-single.html" title="">
-                                            <img src="/upload/@item.Image" alt="" class="img-fluid">
-                                            <div class="hovereffect"></div>
-                                        </a>
-                                    </div><!-- end media -->
-                                </div><!-- end col -->
-
-                                <div class="blog-meta big-meta col-md-8">
-                                    <span class="bg-aqua"><a href="garden-category.html" title="">@item.Type</a></span>
-                                    <h4><a href="garden-single.html" title="">@item.Title</a></h4>
-                                    <p>@item.Text</p>
-                                    <small><a href="garden-category.html" title=""><i class="fa fa-eye"></i> 1887</a></small>
-                                    <small><a href="garden-single.html" title="">11 July, 2017</a></small>
-                                    <small><a href="#" title="">by Matilda</a></small>
-                                </div><!-- end meta -->
-                            </div><!-- end blog-box -->
-                            <hr class="invis">
-                        }
-                    </div> @*end blog-list*@
+                    @{
+                        Html.RenderPartial("~/Views/Shared/_Product.cshtml", Model.Product);
+                    }
                 </div> @*end page-wrapper*@
 
                 <hr class="invis">

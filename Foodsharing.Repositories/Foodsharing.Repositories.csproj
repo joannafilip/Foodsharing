@@ -42,8 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
+    <Compile Include="MessageRepository.cs" />
     <Compile Include="ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropositionProductRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Foodsharing.DAL\Foodsharing.DAL.csproj">
