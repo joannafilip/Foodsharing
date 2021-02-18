@@ -19,7 +19,7 @@ namespace Foodsharing.Controllers
         }
         public ActionResult SignUp()
         {
-            return View();
+            return View(new SignUpModel());
         }
         public ActionResult Index()
         {
