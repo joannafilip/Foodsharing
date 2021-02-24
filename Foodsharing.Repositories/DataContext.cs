@@ -12,21 +12,21 @@ namespace Foodsharing.Repositories
     public class DataContext
     {
         IConcreteRepository<ProductEntity> _productRepo;
-        IConcreteRepository<PropositionProductEntity> _propositionProductRepo;
         IConcreteRepository<MessageEntity> _messageRepo;
-        IConcreteRepository<AdresseEntity> _adresseRepo;
         IConcreteRepository<UtilisateurEntity> _utilisateurRepo;
+        IConcreteRepository<TypeEntity> _typeRepo;
+        IConcreteRepository<SignUpEntity> _signUpRepo;
 
         public DataContext(string connectionString)
     {
         _productRepo = new ProductRepository(connectionString);
-        _propositionProductRepo = new PropositionProductRepository(connectionString);
         _messageRepo = new MessageRepository(connectionString);
-        _adresseRepo = new AdresseRepository(connectionString);
         _utilisateurRepo = new UtilisateurRepository(connectionString);
+        _typeRepo = new TypeRepository(connectionString);
+        _signUpRepo = new SignUpRepository(connectionString);
         }
 
-    public bool SaveContact(ContactModel cm)
+        public bool SaveContact(ContactModel cm)
         {
             MessageEntity me = new MessageEntity();
             me.Nom = cm.Nom;
@@ -41,48 +41,54 @@ namespace Foodsharing.Repositories
         public bool SaveSignUp(SignUpModel sm)
         {
             
-            AdresseEntity ae = new AdresseEntity();
-            ae.Rue = sm.Rue;
-            ae.Numero = sm.Numero;
-            ae.Ville = sm.Ville;
-            ae.CP = sm.CP;
-            ae.IdUtilisateur = new List<UtilisateurEntity>();
-            foreach (UtilisateurEntity item in ae.IdUtilisateur)
-            {
-                item.Nom = sm.Nom;
-                item.Prenom = sm.Prenom;
-                item.Email = sm.Email;
-                item.DateNaiss = sm.DateNaiss;
-                item.Photo = sm.Photo;
-            }
-            return _adresseRepo.Insert(ae);
+            SignUpEntity signUp= new SignUpEntity();
+            signUp.Rue = sm.Rue;
+            signUp.Numero = sm.Numero;
+            signUp.Ville = sm.Ville;
+            signUp.CP = sm.CP;
+            signUp.Nom = sm.Nom;
+            signUp.Prenom = sm.Prenom;
+            signUp.Email = sm.Email;
+            signUp.DateNaiss = sm.DateNaiss;
+            signUp.Photo = sm.Photo;
+           
+            return _signUpRepo.Insert(signUp);
 
         }
 
         public List<ProductContent> GetPropositionsProducts()
     {
             List<ProductContent> lpc = new List<ProductContent>(); //ModelVue
-            List<PropositionProductEntity> propositionProductsFromDb = _propositionProductRepo.Get();
             List<ProductEntity> productsFromDb = _productRepo.Get();//Récupération mon entity
             List<UtilisateurEntity> usersFromDb = _utilisateurRepo.Get();//Récupération mon entity
-            ProductContent pc = new ProductContent();
+            List<TypeEntity> typesFromDb = _typeRepo.Get();//Récupération mon entity
+
+
+            
             foreach (ProductEntity produit in productsFromDb)
             {
+                ProductContent pc = new ProductContent();
                 pc.Title = produit.Nom;
                 pc.Text = produit.Description;
                 pc.DatePeremption = produit.DatePeremption;
                 pc.Bio = produit.Bio;
+                pc.Quantite = produit.Quantite;
                
-            }
-              
-            foreach (UtilisateurEntity utilisateur in usersFromDb)
+                foreach (UtilisateurEntity utilisateur in usersFromDb)
             {
                 pc.Nom = utilisateur.Nom;
                 pc.Prenom = utilisateur.Prenom;
             }
+            foreach (TypeEntity type in typesFromDb)
+            {
+                pc.Type = type.Label;
+            }
+                lpc.Add(pc);
+            }
+           
 
-            
-            lpc.Add(pc);
+
+    
             return lpc;
            
             //foreach (PropositionProductEntity item in propositionProductsFromDb)

@@ -7,7 +7,7 @@ namespace Foodsharing.Models
 {
     public class ProductContent
     {
-
+        private int _quantite;
         private string _title, _image, _text, _type, _nom, _prenom;
         private DateTime _datePeremption;
         private bool _bio;
@@ -107,7 +107,18 @@ namespace Foodsharing.Models
                 _prenom = value;
             }
         }
+        public int Quantite
+        {
+            get
+            {
+                return _quantite;
+            }
 
+            set
+            {
+                _quantite = value;
+            }
+        }
 
     }
 }

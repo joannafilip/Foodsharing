@@ -10,21 +10,21 @@
             <br />
             <form class="form-wrapper" method="post">
                 @Html.AntiForgeryToken()
-                <input type="text" name="Name" class="form-control" placeholder="Your name">
+                <input type="text" name="Nom" class="form-control" placeholder="Your name">
                 @Html.ValidationMessageFor(model => model.Nom, "", new { @class = "text-danger" })
-                <input type="text" name="FirstName" class="form-control" placeholder="Your first name">
+                <input type="text" name="Prenom" class="form-control" placeholder="Your first name">
                 @Html.ValidationMessageFor(model => model.Prenom, "", new { @class = "text-danger" })
                 <input type="email" name="Email" class="form-control" placeholder="Email address">
                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                <input type="date" name="BirthDate" class="form-control" placeholder="Your birthdate">
+                <input type="date" name="DateNaiss" class="form-control" placeholder="Your birthdate">
                 @Html.ValidationMessageFor(model => model.DateNaiss, "", new { @class = "text-danger" })
-                <input type="text" name="Street" class="form-control" placeholder="Street">
+                <input type="text" name="Rue" class="form-control" placeholder="Street">
                 @Html.ValidationMessageFor(model => model.Rue, "", new { @class = "text-danger" })
-                <input type="text" name="Number" class="form-control" placeholder="Number">
+                <input type="text" name="Numero" class="form-control" placeholder="Number">
                 @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
-                <input type="text" name="City" class="form-control" placeholder="City">
+                <input type="text" name="Ville" class="form-control" placeholder="City">
                 @Html.ValidationMessageFor(model => model.Ville, "", new { @class = "text-danger" })
-                <input type="text" name="Postal" class="form-control" placeholder="Postal code">
+                <input type="text" name="CP" class="form-control" placeholder="Postal code">
                 @Html.ValidationMessageFor(model => model.CP, "", new { @class = "text-danger" })
                 <input type="text" name="Photo" class="form-control" placeholder="Photo">
                 @Html.ValidationMessageFor(model => model.Photo, "", new { @class = "text-danger" })

@@ -8,35 +8,36 @@ using System.Threading.Tasks;
 
 namespace Foodsharing.Repositories
 {
-    public class AdresseRepository : BaseRepository<AdresseEntity>,
-        IConcreteRepository<AdresseEntity>
+    public class TypeRepository : BaseRepository<TypeEntity>, IConcreteRepository<TypeEntity>
     {
-        public AdresseRepository(string connectionString) : base(connectionString)
+        public TypeRepository(string connectionString) : base(connectionString)
         {
 
         }
 
-        public bool Delete(AdresseEntity toDelete)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<AdresseEntity> Get()
+        public bool Delete(TypeEntity toDelete)
         {
             throw new NotImplementedException();
         }
 
-        public AdresseEntity GetOne(int PK)
+        public List<TypeEntity> Get()
+        {
+            string requete = "Select * from Type";
+
+            return base.Get(requete);
+        }
+
+        public TypeEntity GetOne(int PK)
         {
             throw new NotImplementedException();
         }
 
-        public bool Insert(AdresseEntity toInsert)
+        public bool Insert(TypeEntity toInsert)
         {
             throw new NotImplementedException();
         }
 
-        public bool Update(AdresseEntity toUpdate)
+        public bool Update(TypeEntity toUpdate)
         {
             throw new NotImplementedException();
         }
