@@ -14,14 +14,16 @@ namespace Foodsharing.Repositories
         IConcreteRepository<ProductEntity> _productRepo;
         IConcreteRepository<PropositionProductEntity> _propositionProductRepo;
         IConcreteRepository<MessageEntity> _messageRepo;
-
+        IConcreteRepository<AdresseEntity> _adresseRepo;
+        IConcreteRepository<UtilisateurEntity> _utilisateurRepo;
 
         public DataContext(string connectionString)
     {
         _productRepo = new ProductRepository(connectionString);
         _propositionProductRepo = new PropositionProductRepository(connectionString);
         _messageRepo = new MessageRepository(connectionString);
-
+        _adresseRepo = new AdresseRepository(connectionString);
+        _utilisateurRepo = new UtilisateurRepository(connectionString);
         }
 
     public bool SaveContact(ContactModel cm)
@@ -36,29 +38,73 @@ namespace Foodsharing.Repositories
             return _messageRepo.Insert(me);
 
         }
+        public bool SaveSignUp(SignUpModel sm)
+        {
+            
+            AdresseEntity ae = new AdresseEntity();
+            ae.Rue = sm.Rue;
+            ae.Numero = sm.Numero;
+            ae.Ville = sm.Ville;
+            ae.CP = sm.CP;
+            ae.IdUtilisateur = new List<UtilisateurEntity>();
+            foreach (UtilisateurEntity item in ae.IdUtilisateur)
+            {
+                item.Nom = sm.Nom;
+                item.Prenom = sm.Prenom;
+                item.Email = sm.Email;
+                item.DateNaiss = sm.DateNaiss;
+                item.Photo = sm.Photo;
+            }
+            return _adresseRepo.Insert(ae);
 
-    public List <ProductContent> GetPropositionsProducts()
+        }
+
+        public List<ProductContent> GetPropositionsProducts()
     {
             List<ProductContent> lpc = new List<ProductContent>(); //ModelVue
-            List<ProductEntity> pe = new List<ProductEntity>();
-            //Récupération de mon entity
             List<PropositionProductEntity> propositionProductsFromDb = _propositionProductRepo.Get();
-            foreach (PropositionProductEntity item in propositionProductsFromDb)
+            List<ProductEntity> productsFromDb = _productRepo.Get();//Récupération mon entity
+            List<UtilisateurEntity> usersFromDb = _utilisateurRepo.Get();//Récupération mon entity
+            ProductContent pc = new ProductContent();
+            foreach (ProductEntity produit in productsFromDb)
             {
-                ProductContent pc = new ProductContent();
-                pc.Utilisateur = item.IdUtilisateur;
-
-                foreach (ProductEntity produit in pe)
-                {
-                    pc.Title = produit.Nom;
-                    pc.Text = produit.Description;
-                    pc.DatePeremption = produit.DatePeremption;
-                    pc.Bio  = produit.Bio;
-                }
-                 
-                
+                pc.Title = produit.Nom;
+                pc.Text = produit.Description;
+                pc.DatePeremption = produit.DatePeremption;
+                pc.Bio = produit.Bio;
+               
             }
+              
+            foreach (UtilisateurEntity utilisateur in usersFromDb)
+            {
+                pc.Nom = utilisateur.Nom;
+                pc.Prenom = utilisateur.Prenom;
+            }
+
+            
+            lpc.Add(pc);
             return lpc;
+           
+            //foreach (PropositionProductEntity item in propositionProductsFromDb)
+            //{
+            //    item.IdProduit = new List<ProductEntity>();
+            //    item.IdUtilisateur = new List<UtilisateurEntity>();
+            //    ProductContent pc= new ProductContent();//jeden product content
+
+            //    foreach (ProductEntity produit in item.IdProduit)
+            //    {
+            //        pc.Title = produit.Nom;
+            //        pc.Text = produit.Description;
+            //        pc.DatePeremption = produit.DatePeremption;
+            //        pc.Bio  = produit.Bio;
+            //    }
+            //    foreach (UtilisateurEntity utilisateur in item.IdUtilisateur)
+            //    {
+            //        pc.Utilisateur = utilisateur.Nom;
+
+            //    }
+
+            
 
 
         }

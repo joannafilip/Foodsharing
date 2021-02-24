@@ -9,8 +9,8 @@ namespace Foodsharing.Models
 {
     public class SignUpModel
     {
-        string _nom, _prenom, _photo, _email, _numero, _rue, _ville, _cp;
-        DateTime _dateNaiss;
+        private string _nom, _prenom, _photo, _email, _numero, _rue, _ville, _cp;
+        private DateTime _dateNaiss;
 
         [Required]
         [MaxLength(50)]
@@ -128,7 +128,7 @@ namespace Foodsharing.Models
             }
         }
         [Required]
-        [RegularExpression(@"^\d{4}-((0\d)|(1[012]))-(([012]\d)|3[01])$")]
+        //[RegularExpression(@"^\d{4}-((0\d)|(1[012]))-(([012]\d)|3[01])$")]
         public DateTime DateNaiss
         {
             get

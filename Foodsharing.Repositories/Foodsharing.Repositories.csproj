@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdresseRepository.cs" />
     <Compile Include="DataContext.cs" />
     <Compile Include="MessageRepository.cs" />
     <Compile Include="ProductRepository.cs" />

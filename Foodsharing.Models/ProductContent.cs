@@ -8,10 +8,9 @@ namespace Foodsharing.Models
     public class ProductContent
     {
 
-        private string _title, _image, _text, _type;
+        private string _title, _image, _text, _type, _nom, _prenom;
         private DateTime _datePeremption;
         private bool _bio;
-        private int _utilisateur;
         public string Title
         {
             get
@@ -84,16 +83,28 @@ namespace Foodsharing.Models
                 _bio = value;
             }
         }
-        public int Utilisateur
+        public string Nom
         {
             get
             {
-                return _utilisateur;
+                return _nom;
             }
 
             set
             {
-                _utilisateur = value;
+                _nom = value;
+            }
+        }
+        public string Prenom
+        {
+            get
+            {
+                return _prenom;
+            }
+
+            set
+            {
+                _prenom = value;
             }
         }
 

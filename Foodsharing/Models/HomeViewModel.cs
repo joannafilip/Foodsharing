@@ -17,9 +17,9 @@ namespace Foodsharing.Models
         {
             //trois images
             MainImage = new List<MainImageContent>();
-            MainImage.Add(new MainImageContent() { Image = "4.jpg", Title = "How to Store Vegetables to Keep them Fresh", Date = new DateTime(2020, 1, 1), Autor = "Lucie", Type = "Fruits/Veggies"});
-            MainImage.Add(new MainImageContent() { Image = "1.jpg", Title = "The Best Veggie Burger ", Date = new DateTime(2020, 2, 1), Autor = "Frank", Type = "Meal" });
-            MainImage.Add(new MainImageContent() { Image = "2.png", Title = "The Fluffiest Vegan Pancakes", Date = new DateTime(2020, 1, 1), Autor = "Lucie", Type = "Dessert" });
+            MainImage.Add(new MainImageContent() { Image = "4.jpg", Title = "How to Store Vegetables to Keep them Fresh", Date = new DateTime(2021, 1, 1), Autor = "Lucie", Type = "Fruits/Veggies"});
+            MainImage.Add(new MainImageContent() { Image = "1.jpg", Title = "The Best Veggie Burger ", Date = new DateTime(2021, 2, 1), Autor = "Frank", Type = "Lunch" });
+            MainImage.Add(new MainImageContent() { Image = "2.png", Title = "The Fluffiest Vegan Pancakes", Date = new DateTime(2021, 1, 1), Autor = "Lucie", Type = "Dessert" });
 
             //top 6 products
             TopProduct = new List<ProductContent>();

@@ -20,7 +20,7 @@ namespace Foodsharing.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "About";
 
             return View();
         }
@@ -28,7 +28,7 @@ namespace Foodsharing.Controllers
         [HttpGet]
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Contact.";
 
             return View();
         }
@@ -69,11 +69,6 @@ namespace Foodsharing.Controllers
             ProductViewModel productViewModel = new ProductViewModel();
             return View(productViewModel);
         }
-        //public ActionResult MyAccount()
-        //{
-        //    ViewBag.Message = "Your contact page.";
-
-        //    return View();
-        //}
+      
     }
 }

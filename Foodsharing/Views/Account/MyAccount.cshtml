@@ -5,39 +5,31 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<p>@Session["MessageInfo"]</p>
+<div class="row">
+    <div class="col-lg-8 offset-lg-2">
+        <form class="form-wrapper" method="post">
+            @Html.AntiForgeryToken()
+            <input type="text" name="Login" class="form-control" placeholder="Login">
+            @Html.ValidationMessageFor(model => model.Login, "", new { @class = "text-danger" })
+            <input type="text" name="Password" class="form-control" placeholder="Password">
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            <button type="submit" class="btn btn-primary">Log In <i class="fa fa-user-o p-2" aria-hidden="true"></i></button>
+        </form>
+        <br />
+        @if (ViewBag.SuccessMessage != null)
+        {
+            @:<div class="alert alert-success">@ViewBag.SuccessMessage</div>
+        }
 
-
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-     
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Login, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Login, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Login, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Log In" class="btn btn-default" />
-            </div>
-        </div>
+        @if (ViewBag.ErrorMessage != null)
+        {
+            @:<div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+        }
     </div>
-}
+</div>
+
 
 @*<div>
-    @Html.ActionLink("Back to List", "Index", "Home")
-</div>*@
+        @Html.ActionLink("Back to List", "Index", "Home")
+    </div>*@

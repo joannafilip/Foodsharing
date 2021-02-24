@@ -6,85 +6,82 @@ using System.Threading.Tasks;
 
 namespace Foodsharing.Entities
 {
-    public class MessageEntity
-    {
-        private int _idMessage;
-        private string _nom, _email, _phone, _information, _subject;
+	public class AdresseEntity
+	{
+        private int _idAdresse;
+        private string _numero, _rue, _ville, _cp;
+        private List<UtilisateurEntity> _idUtilisateur;
 
-        public int IdMessage
+        public int IdAdresse
         {
             get
             {
-                return _idMessage;
+                return _idAdresse;
             }
 
             set
             {
-                _idMessage = value;
+                _idAdresse = value;
             }
         }
-        public string Nom
+        public string Numero
         {
             get
             {
-                return _nom;
+                return _numero;
             }
 
             set
             {
-                _nom = value;
+                _numero = value;
             }
         }
-
-        public string Email
+        public string Rue
         {
             get
             {
-                return _email;
+                return _rue;
             }
 
             set
             {
-                _email = value;
+                _rue= value;
             }
         }
-
-        public string Phone
+        public string Ville
         {
             get
             {
-                return _phone;
+                return _ville;
             }
 
             set
             {
-                _phone = value;
+                _ville = value;
             }
         }
-
-        public string Information
+        public string CP
         {
             get
             {
-                return _information;
+                return _cp;
             }
 
             set
             {
-                _information = value;
+                _cp = value;
             }
         }
-
-        public string Subject
+        public List<UtilisateurEntity>IdUtilisateur
         {
             get
             {
-                return _subject;
+                return _idUtilisateur;
             }
 
             set
             {
-                _subject = value;
+                _idUtilisateur = value;
             }
         }
     }

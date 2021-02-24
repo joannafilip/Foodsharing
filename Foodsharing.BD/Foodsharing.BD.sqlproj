@@ -57,6 +57,7 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Tables" />
+    <Folder Include="ProcéduresStockées" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Adresse.sql" />
@@ -69,6 +70,7 @@
     <Build Include="Tables\Type.sql" />
     <Build Include="Tables\Utilisateur.sql" />
     <Build Include="Tables\Message.sql" />
+    <Build Include="ProcéduresStockées\SP_Adresse_Insert.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Foodsharing.BD.dbmdl" />

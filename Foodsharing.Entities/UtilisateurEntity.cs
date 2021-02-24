@@ -8,9 +8,9 @@ namespace Foodsharing.Entities
 {
    public class UtilisateurEntity
     {
-		int _idUtilisateur;
-		string _nom, _prenom, _photo, _email;
-		DateTime _dateNaiss;
+		private int _idUtilisateur;
+		private string _nom, _prenom, _photo, _email;
+		private DateTime _dateNaiss;
 
         public int IdUtilisateur
         {

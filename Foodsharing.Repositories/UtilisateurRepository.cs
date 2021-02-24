@@ -23,7 +23,9 @@ namespace Foodsharing.Repositories
 
         public List<UtilisateurEntity> Get()
         {
-            throw new NotImplementedException();
+            string requete = "Select * from Utilisateur";
+
+            return base.Get(requete);
         }
 
         public UtilisateurEntity GetOne(int PK)

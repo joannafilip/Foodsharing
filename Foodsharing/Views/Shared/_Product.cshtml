@@ -15,9 +15,19 @@
                 <span class="bg-aqua"><a href="garden-category.html" title="">@item.Type</a></span>
                 <h4><a href="garden-single.html" title="">@item.Title</a></h4>
                 <p>@item.Text</p>
-                <small><a href="garden-category.html" title=""><i class="fa fa-eye"></i> @item.Bio</a></small>
+
+
+                @if (@item.Bio = true)
+                {
+                    @:<small><a href="garden-category.html" title=""><i class="fa fa-eye"></i> Bio</a></small>
+                }
+                @if (@item.Bio = false)
+                {@:<small><a href="garden-category.html" title=""><i class="fa fa-eye"></i></a></small>
+                }
+
+
                 <small><a href="garden-single.html" title="">@item.DatePeremption</a></small>
-                <small><a href="#" title="">@item.Utilisateur</a></small>
+                <small><a href="#" title="">@item.Prenom @item.Nom</a></small>
             </div><!-- end meta -->
         </div><!-- end blog-box -->
         <hr class="invis">
