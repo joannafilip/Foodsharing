@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>My account</h2>
+<p>@Session["MessageInfo"]</p>
+
+<div>
+    @Html.ActionLink("Donate your product", "DonateProduct", "Home")
+</div>

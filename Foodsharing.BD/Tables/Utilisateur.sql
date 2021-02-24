@@ -6,6 +6,9 @@
 	[DateNaiss] DATE NOT NULL,
 	[Email] VARCHAR (64) NOT NULL,
 	[Photo] NVARCHAR (256)NOT NULL ,
-	PRIMARY KEY CLUSTERED ([IdUtilisateur] ASC)
+	[Login] VARCHAR(16) NOT NULL, 
+    [Password] VARBINARY(32) NOT NULL, 
+    [Salt] CHAR(8) NOT NULL, 
+    PRIMARY KEY CLUSTERED ([IdUtilisateur] ASC)
 
 )

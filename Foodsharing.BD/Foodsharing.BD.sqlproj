@@ -58,6 +58,8 @@
     <Folder Include="Properties" />
     <Folder Include="Tables" />
     <Folder Include="ProcéduresStockées" />
+    <Folder Include="FonctionsScalaires" />
+    <Folder Include="Vues" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Adresse.sql" />
@@ -71,6 +73,10 @@
     <Build Include="Tables\Utilisateur.sql" />
     <Build Include="Tables\Message.sql" />
     <Build Include="ProcéduresStockées\SP_Adresse_Insert.sql" />
+    <Build Include="ProcéduresStockées\SP_Product_Insert.sql" />
+    <Build Include="FonctionsScalaires\SF_EncryptedPassword.sql" />
+    <Build Include="FonctionsScalaires\SF_GenerateSalt.sql" />
+    <Build Include="Vues\V_GetRandom.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Foodsharing.BD.dbmdl" />

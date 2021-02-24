@@ -13,16 +13,37 @@ namespace Foodsharing.Controllers
     public class AccountController : Controller
     {
         // GET: Account
-        
-        public ActionResult Index()
-        {
-            return View();
-        }
-         public ActionResult MyAccount()
+
+        [HttpGet]
+        public ActionResult MyAccount()
         {
             ViewBag.Message = "Your contact page.";
 
             return View(new LoginModel());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult MyAccount(LoginModel lm)
+        {
+            if (ModelState.IsValid)
+            {
+                if (lm.Login != "Joanna" && lm.Password != "test")
+                {
+                    ViewBag.Error = "Erreur Login/Password";
+                    return View();
+                }
+                else
+                {
+                    SessionUtils.IsLogged = true;
+                    ViewBag.SuccessMessage = "ok.";
+                    return RedirectToAction("Index", "Home", new { area = "Member" });
+                }
+            }
+            else
+            {
+                return View();
+            }
         }
 
         [HttpGet]
@@ -43,7 +64,7 @@ namespace Foodsharing.Controllers
                 if (ctx.SaveSignUp(signUp))
                 {
                     ViewBag.SuccessMessage = "Hello, you're a member of Foodsharing community!";
-                    return View();
+                    return RedirectToAction("Index", "Home", new { area = "Member" });
                 }
                 else
                 {
@@ -72,29 +93,6 @@ namespace Foodsharing.Controllers
             return View(new LoginModel());
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Login(LoginModel lm)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        if (lm.Login != "Joanna" && lm.Password != "test")
-        //        {
-        //            ViewBag.Error = "Erreur Login/Password";
-        //            return View();
-        //        }
-        //        else
-        //        {
-        //            SessionUtils.IsLogged = true;
-        //            ViewBag.Error = "Erreur Login/Password";
-        //            return View();
-        //            //return RedirectToAction("Index", "Home", new { area = "Membre" });
-        //        }
-        //    }
-        //    else
-        //    {
-        //        return View();
-        //    }
-        //}
+       
     }
 }

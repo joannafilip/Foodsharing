@@ -62,8 +62,6 @@ namespace Foodsharing.Repositories
             List<ProductEntity> productsFromDb = _productRepo.Get();//Récupération mon entity
             List<UtilisateurEntity> usersFromDb = _utilisateurRepo.Get();//Récupération mon entity
             List<TypeEntity> typesFromDb = _typeRepo.Get();//Récupération mon entity
-
-
             
             foreach (ProductEntity produit in productsFromDb)
             {
@@ -75,44 +73,18 @@ namespace Foodsharing.Repositories
                 pc.Quantite = produit.Quantite;
                
                 foreach (UtilisateurEntity utilisateur in usersFromDb)
-            {
+                {
                 pc.Nom = utilisateur.Nom;
                 pc.Prenom = utilisateur.Prenom;
-            }
-            foreach (TypeEntity type in typesFromDb)
-            {
+                }
+                foreach (TypeEntity type in typesFromDb)
+                {
                 pc.Type = type.Label;
-            }
+                }
                 lpc.Add(pc);
-            }
+                }
            
-
-
-    
             return lpc;
-           
-            //foreach (PropositionProductEntity item in propositionProductsFromDb)
-            //{
-            //    item.IdProduit = new List<ProductEntity>();
-            //    item.IdUtilisateur = new List<UtilisateurEntity>();
-            //    ProductContent pc= new ProductContent();//jeden product content
-
-            //    foreach (ProductEntity produit in item.IdProduit)
-            //    {
-            //        pc.Title = produit.Nom;
-            //        pc.Text = produit.Description;
-            //        pc.DatePeremption = produit.DatePeremption;
-            //        pc.Bio  = produit.Bio;
-            //    }
-            //    foreach (UtilisateurEntity utilisateur in item.IdUtilisateur)
-            //    {
-            //        pc.Utilisateur = utilisateur.Nom;
-
-            //    }
-
-            
-
-
         }
 
 

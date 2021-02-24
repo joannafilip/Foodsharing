@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<p>@Session["MessageInfo"]</p>
+
 <div class="row">
     <div class="col-lg-8 offset-lg-2">
         <form class="form-wrapper" method="post">
@@ -15,17 +15,18 @@
             <input type="text" name="Password" class="form-control" placeholder="Password">
             @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
             <button type="submit" class="btn btn-primary">Log In <i class="fa fa-user-o p-2" aria-hidden="true"></i></button>
+            @if (ViewBag.ErrorMessage != null)
+            {
+                @:<div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+            } @if (ViewBag.SuccessMessage != null)
+            {
+            @:<div class="alert alert-success">@ViewBag.SuccessMessage</div>
+            }
         </form>
         <br />
-        @if (ViewBag.SuccessMessage != null)
-        {
-            @:<div class="alert alert-success">@ViewBag.SuccessMessage</div>
-        }
+       
 
-        @if (ViewBag.ErrorMessage != null)
-        {
-            @:<div class="alert alert-danger">@ViewBag.ErrorMessage</div>
-        }
+        
     </div>
 </div>
 
