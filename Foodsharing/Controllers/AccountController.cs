@@ -26,9 +26,10 @@ namespace Foodsharing.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult MyAccount(LoginModel lm)
         {
+            DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
             if (ModelState.IsValid)
             {
-                if (lm.Login != "Joanna" && lm.Password != "test")
+                if (!ctx.UserAuth(lm))
                 {
                     ViewBag.Error = "Erreur Login/Password";
                     return View();
@@ -45,6 +46,49 @@ namespace Foodsharing.Controllers
                 return View();
             }
         }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult MyAccount(LoginModel lm)
+        //{
+        //    if (ModelState.IsValid)
+        //        {
+        //            UserModel um = ctx.UserAuth(lm);
+        //            if (um == null)
+        //            {
+        //                ViewBag.Error = "Erreur Login/Password";
+        //                return View();
+        //        }
+        //            else
+        //            {
+        //                SessionUtils.IsLogged = true;
+        //                SessionUtils.ConnectedUser = um;
+        //                return RedirectToAction("Index", "Home", new { area = "Membre" });
+        //            }
+        //        }
+        //            else
+        //        {
+        //             return View();
+        //            }
+        //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         [HttpGet]
         public ActionResult SignUp()
@@ -63,6 +107,7 @@ namespace Foodsharing.Controllers
 
                 if (ctx.SaveSignUp(signUp))
                 {
+                    SessionUtils.IsLogged = true;
                     ViewBag.SuccessMessage = "Hello, you're a member of Foodsharing community!";
                     return RedirectToAction("Index", "Home", new { area = "Member" });
                 }
@@ -78,19 +123,6 @@ namespace Foodsharing.Controllers
                 return View();
             }
 
-        }
-
-        [HttpGet]
-        public ActionResult Logout()
-        {
-            Session.Abandon();
-
-            return RedirectToAction("Index", "Home");
-        }
-        [HttpGet]
-        public ActionResult Login()
-        {
-            return View(new LoginModel());
         }
 
        

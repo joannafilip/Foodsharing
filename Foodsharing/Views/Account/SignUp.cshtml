@@ -28,6 +28,10 @@
                 @Html.ValidationMessageFor(model => model.CP, "", new { @class = "text-danger" })
                 <input type="text" name="Photo" class="form-control" placeholder="Photo">
                 @Html.ValidationMessageFor(model => model.Photo, "", new { @class = "text-danger" })
+                <input type="text" name="Login" class="form-control" placeholder="Login">
+                @Html.ValidationMessageFor(model => model.Login, "", new { @class = "text-danger" })
+                <input type="text" name="Password" class="form-control" placeholder="Password">
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                 <button type="submit" class="btn btn-primary">Sign Up <i class="fa fa-user-o p-2" aria-hidden="true"></i></button>
             </form>
             @if (ViewBag.SuccessMessage != null)

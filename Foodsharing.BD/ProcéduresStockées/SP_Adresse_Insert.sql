@@ -21,4 +21,4 @@ DECLARE @idUtilisateur INT, @salt CHAR(8)
 	INSERT INTO[Adresse]([Numero], [Rue], [Ville], [CP],[IdUtilisateur] )
 	OUTPUT inserted.IdAdresse
 	VALUES (@numero, @rue, @ville, @cp, @idUtilisateur)
-RETURN 0
+

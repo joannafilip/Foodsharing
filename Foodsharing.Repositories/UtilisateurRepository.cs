@@ -23,9 +23,20 @@ namespace Foodsharing.Repositories
 
         public List<UtilisateurEntity> Get()
         {
-            string requete = "Select * from Utilisateur";
+            string requete = "Select  [Login], Nom, Prenom, DateNaiss, Photo, Email from Utilisateur";
 
             return base.Get(requete);
+        }
+        public UtilisateurEntity GetFromLogin(string login, string password)
+        {
+            string requete = @" EXEC [dbo].[SP_Check_Password]
+   @login
+  ,@password";
+            Dictionary<string, object> parametre = new Dictionary<string, object>();
+            parametre.Add("login", login);
+            parametre.Add("password", password);
+
+            return base.Get(requete, parametre).FirstOrDefault();
         }
 
         public UtilisateurEntity GetOne(int PK)

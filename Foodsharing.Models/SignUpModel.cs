@@ -9,7 +9,7 @@ namespace Foodsharing.Models
 {
     public class SignUpModel
     {
-        private string _nom, _prenom, _photo, _email, _numero, _rue, _ville, _cp;
+        private string _nom, _prenom, _photo, _email, _numero, _rue, _ville, _cp, _login, _password;
         private DateTime _dateNaiss;
 
         [Required]
@@ -139,6 +139,32 @@ namespace Foodsharing.Models
             set
             {
                 _dateNaiss = value;
+            }
+        }
+        [Required]
+        public string Login
+        {
+            get
+            {
+                return _login;
+            }
+
+            set
+            {
+                _login = value;
+            }
+        }
+        [Required]
+        public string Password
+        {
+            get
+            {
+                return _password;
+            }
+
+            set
+            {
+                _password = value;
             }
         }
     }

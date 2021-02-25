@@ -22,8 +22,9 @@ namespace Foodsharing.Repositories
 
         public List<SignUpEntity> Get()
         {
-            throw new NotImplementedException();
+            return base.Get("Select * from Utilisateur");
         }
+    
 
         public SignUpEntity GetOne(int PK)
         {
@@ -41,7 +42,9 @@ namespace Foodsharing.Repositories
   ,@prenom
   ,@dateNaiss
   ,@email
-  ,@photo";
+  ,@photo
+  ,@login
+  ,@password";
 
 
             return base.Insert(toInsert, requete);
@@ -51,5 +54,6 @@ namespace Foodsharing.Repositories
         {
             throw new NotImplementedException();
         }
+
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Foodsharing.Repositories
 {
     public class DataContext
@@ -51,8 +52,16 @@ namespace Foodsharing.Repositories
             signUp.Email = sm.Email;
             signUp.DateNaiss = sm.DateNaiss;
             signUp.Photo = sm.Photo;
+            signUp.Password = sm.Password;
+            signUp.Login = sm.Login;
            
             return _signUpRepo.Insert(signUp);
+
+        }
+        public bool UserAuth(LoginModel lm)
+        {
+            UtilisateurEntity ue = ((UtilisateurRepository)_utilisateurRepo).GetFromLogin(lm.Login, lm.Password);
+            return ue != null;
 
         }
 
@@ -86,6 +95,8 @@ namespace Foodsharing.Repositories
            
             return lpc;
         }
+
+    
 
 
 
