@@ -29,9 +29,9 @@ namespace Foodsharing.Repositories
         }
         public UtilisateurEntity GetFromLogin(string login, string password)
         {
-            string requete = @" EXEC [dbo].[SP_Check_Password]
-   @login
-  ,@password";
+            string requete = @" EXEC [dbo].[SP_Check_Password] 
+                                                        @login,
+                                                        @password";
             Dictionary<string, object> parametre = new Dictionary<string, object>();
             parametre.Add("login", login);
             parametre.Add("password", password);
