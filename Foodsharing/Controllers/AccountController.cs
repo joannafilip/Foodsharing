@@ -65,7 +65,7 @@ namespace Foodsharing.Controllers
                 if (ctx.SaveSignUp(signUp))
                 {
                     SessionUtils.IsLogged = true;
-                    ViewBag.SuccessMessage = "Hello, you're a member of Foodsharing community!";
+                    //ViewBag.SuccessMessage = "Hello, you're a member of Foodsharing community!";
                     return RedirectToAction("Index", "Home", new { area = "Member" });
                 }
                 else

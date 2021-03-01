@@ -9,9 +9,9 @@ namespace Foodsharing.Models
 {
     public class ProfilModel
     {
-        int _idUser;
-        string _name, _firstName, _login, _email, _number, _city, _photo, _cp, _street, _password;
-        DateTime _birthDate;
+        private int _idUser;
+        private string _name, _firstName, _login, _email, _number, _city, _photo, _cp, _street, _password;
+        private DateTime _birthDate;
 
 
         public int IdUser

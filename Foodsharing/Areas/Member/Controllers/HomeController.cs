@@ -21,9 +21,10 @@ namespace Foodsharing.Areas.Member.Controllers
         {
             return View(new DonateProductModel());
         }
+        [HttpGet]
         public ActionResult MyProfile()
         {
-          
+            
               return View(new ProfilModel());
                 
             
