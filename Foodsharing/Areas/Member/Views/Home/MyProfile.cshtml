@@ -1,0 +1,22 @@
+﻿@model Foodsharing.Models.ProfilModel
+
+@{
+    ViewBag.Title = "MyProfile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>MyProfile</h2>
+
+<div>Login: @Model.Login</div>
+<div>Name: @Model.Name</div>
+<div>Firstname: @Model.FirstName</div>
+<div>Photo: @Model.Photo</div>
+@*<div>Address</div>
+    <div>Street : @Model.Street</div>
+    <div>Number : @Model.Number</div>
+    <div>Post : @Model.CP</div>
+    <div>City : @Model.City</div>
+    <div>Birthdate: @Model.Birthdate</div>*@
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

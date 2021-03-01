@@ -58,11 +58,24 @@ namespace Foodsharing.Repositories
             return _signUpRepo.Insert(signUp);
 
         }
-        public bool UserAuth(LoginModel lm)
+        public ProfilModel UserAuth(LoginModel lm)
         {
             UtilisateurEntity ue = ((UtilisateurRepository)_utilisateurRepo).GetFromLogin(lm.Login, lm.Password);
-            return ue != null;
-
+            if (ue == null) return null;
+            if (ue != null) 
+            {
+                return new ProfilModel()
+                {
+                    Login = ue.Login,
+                    Name = ue.Nom,
+                    FirstName= ue.Prenom,
+                    Photo = ue.Photo
+                };
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public List<ProductContent> GetPropositionsProducts()

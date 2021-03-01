@@ -29,7 +29,8 @@ namespace Foodsharing.Controllers
             DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
             if (ModelState.IsValid)
             {
-                if (!ctx.UserAuth(lm))
+                ProfilModel pf = ctx.UserAuth(lm);
+                if (pf == null)
                 {
                     ViewBag.Error = "Erreur Login/Password";
                     return View();
@@ -37,8 +38,8 @@ namespace Foodsharing.Controllers
                 else
                 {
                     SessionUtils.IsLogged = true;
-                    ViewBag.SuccessMessage = "ok.";
-                    return RedirectToAction("Index", "Home", new { area = "Member" });
+                    SessionUtils.ConnectedUser = pf;
+                    return RedirectToAction("MyProfile", "Home", new { area = "Member" });
                 }
             }
             else
@@ -46,56 +47,12 @@ namespace Foodsharing.Controllers
                 return View();
             }
         }
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult MyAccount(LoginModel lm)
-        //{
-        //    if (ModelState.IsValid)
-        //        {
-        //            UserModel um = ctx.UserAuth(lm);
-        //            if (um == null)
-        //            {
-        //                ViewBag.Error = "Erreur Login/Password";
-        //                return View();
-        //        }
-        //            else
-        //            {
-        //                SessionUtils.IsLogged = true;
-        //                SessionUtils.ConnectedUser = um;
-        //                return RedirectToAction("Index", "Home", new { area = "Membre" });
-        //            }
-        //        }
-        //            else
-        //        {
-        //             return View();
-        //            }
-        //}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
         [HttpGet]
         public ActionResult SignUp()
         {
             return View(new SignUpModel());
         }
-
 
         [HttpPost]
         [ValidateAntiForgeryToken]

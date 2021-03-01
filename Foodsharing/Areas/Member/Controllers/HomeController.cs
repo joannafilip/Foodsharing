@@ -1,6 +1,9 @@
-﻿using Foodsharing.Models;
+﻿using Foodsharing.Infra;
+using Foodsharing.Models;
+using Foodsharing.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -12,11 +15,18 @@ namespace Foodsharing.Areas.Member.Controllers
         // GET: Member/Home
         public ActionResult Index()
         {
-            return View(new UserModel());
+            return View();
         }
         public ActionResult DonateProduct()
         {
             return View(new DonateProductModel());
+        }
+        public ActionResult MyProfile()
+        {
+          
+              return View(new ProfilModel());
+                
+            
         }
         [HttpGet]
         public ActionResult Logout()

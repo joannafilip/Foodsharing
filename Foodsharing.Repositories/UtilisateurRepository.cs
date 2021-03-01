@@ -27,6 +27,7 @@ namespace Foodsharing.Repositories
 
             return base.Get(requete);
         }
+
         public UtilisateurEntity GetFromLogin(string login, string password)
         {
             string requete = @" EXEC [dbo].[SP_Check_Password] 

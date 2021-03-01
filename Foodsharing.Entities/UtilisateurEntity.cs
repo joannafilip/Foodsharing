@@ -11,6 +11,7 @@ namespace Foodsharing.Entities
 		private int _idUtilisateur;
 		private string _nom, _prenom, _photo, _email, _login, _password, _salt;
 		private DateTime _dateNaiss;
+    
 
         public int IdUtilisateur
         {

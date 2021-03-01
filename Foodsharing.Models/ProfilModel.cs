@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 
 namespace Foodsharing.Models
 {
-    public class UserModel
+    public class ProfilModel
     {
         int _idUser;
-        string _firstName, _lastName, _login, _password;
-        string _email, _country, _city, _image;
+        string _name, _firstName, _login, _email, _number, _city, _photo, _cp, _street, _password;
+        DateTime _birthDate;
+
+
         public int IdUser
         {
             get
@@ -24,8 +26,7 @@ namespace Foodsharing.Models
                 _idUser = value;
             }
         }
-        [Required]
-        [MaxLength(50)]
+       
         public string FirstName
         {
             get
@@ -38,23 +39,21 @@ namespace Foodsharing.Models
                 _firstName = value;
             }
         }
-        [Required]
-        [MaxLength(50)]
-        public string LastName
+    
+        public string Name
         {
             get
             {
-                return _lastName;
+                return _name;
             }
 
             set
             {
-                _lastName = value;
+                _name = value;
             }
         }
 
-        [Required]
-        [MaxLength(50)]
+   
         public string Login
         {
             get
@@ -68,23 +67,7 @@ namespace Foodsharing.Models
             }
         }
 
-        [Required]
-        [MaxLength(50)]
-        public string Password
-        {
-            get
-            {
-                return _password;
-            }
-            set
-            {
-                _password = value;
-            }
-        }
 
-     
-        [EmailAddress]
-        [DataType(DataType.EmailAddress)]
         public string Email
         {
             get
@@ -97,24 +80,7 @@ namespace Foodsharing.Models
                 _email = value;
             }
         }
-
-      
-        [Required]
-
-        public string Country
-        {
-            get
-            {
-                return _country;
-            }
-
-            set
-            {
-                _country = value;
-            }
-        }
-        [Required]
-        public string City
+      public string City
         {
             get
             {
@@ -127,16 +93,76 @@ namespace Foodsharing.Models
             }
         }
 
-        public string Image
+        public string Photo
         {
             get
             {
-                return _image;
+                return _photo;
             }
 
             set
             {
-                _image = value;
+                _photo = value;
+            }
+        }
+        public string Number
+        {
+            get
+            {
+                return _number;
+            }
+
+            set
+            {
+                _number = value;
+            }
+        }
+        public DateTime Birthdate
+        {
+            get
+            {
+                return _birthDate;
+            }
+
+            set
+            {
+                _birthDate = value;
+            }
+        }
+        public string CP
+        {
+            get
+            {
+                return _cp;
+            }
+
+            set
+            {
+                _cp = value;
+            }
+        }
+        public string Street
+        {
+            get
+            {
+                return _street;
+            }
+
+            set
+            {
+                _street = value;
+            }
+        }
+        public string Password
+        {
+            get
+            {
+                return _password;
+            }
+
+            set
+            {
+                _password = value;
             }
         }
     }

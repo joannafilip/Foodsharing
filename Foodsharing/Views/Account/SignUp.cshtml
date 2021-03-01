@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-lg-8 offset-lg-2">
             <br />
-            <form class="form-wrapper" method="post">
+            <form class="form-wrapper" method="post" enctype="multipart/form-data">
                 @Html.AntiForgeryToken()
                 <input type="text" name="Nom" class="form-control" placeholder="Your name">
                 @Html.ValidationMessageFor(model => model.Nom, "", new { @class = "text-danger" })
