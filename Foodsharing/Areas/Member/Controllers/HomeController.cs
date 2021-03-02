@@ -25,7 +25,8 @@ namespace Foodsharing.Areas.Member.Controllers
         public ActionResult MyProfile()
         {
             
-              return View(new ProfilModel());
+            
+            return View(SessionUtils.ConnectedUser);
                 
             
         }
