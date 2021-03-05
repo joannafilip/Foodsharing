@@ -10,7 +10,7 @@ namespace Foodsharing.Models
     public class ProfilModel
     {
         private int _idUser;
-        private string _name, _firstName, _login, _email, _number, _city, _photo, _cp, _street, _password;
+        private string _name, _firstName, _login, _email, _numero, _ville, _photo, _cp, _password, _rue;
         private DateTime _birthDate;
 
 
@@ -80,16 +80,16 @@ namespace Foodsharing.Models
                 _email = value;
             }
         }
-      public string City
+      public string Ville
         {
             get
             {
-                return _city;
+                return _ville;
             }
 
             set
             {
-                _city = value;
+                _ville = value;
             }
         }
 
@@ -105,16 +105,16 @@ namespace Foodsharing.Models
                 _photo = value;
             }
         }
-        public string Number
+        public string Numero
         {
             get
             {
-                return _number;
+                return _numero;
             }
 
             set
             {
-                _number = value;
+                _numero = value;
             }
         }
         public DateTime Birthdate
@@ -141,18 +141,6 @@ namespace Foodsharing.Models
                 _cp = value;
             }
         }
-        public string Street
-        {
-            get
-            {
-                return _street;
-            }
-
-            set
-            {
-                _street = value;
-            }
-        }
         public string Password
         {
             get
@@ -163,6 +151,18 @@ namespace Foodsharing.Models
             set
             {
                 _password = value;
+            }
+        }
+        public string Rue
+        {
+            get
+            {
+                return _rue;
+            }
+
+            set
+            {
+                _rue = value;
             }
         }
     }

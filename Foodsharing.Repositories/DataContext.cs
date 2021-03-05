@@ -69,7 +69,13 @@ namespace Foodsharing.Repositories
                     Login = ue.Login,
                     Name = ue.Nom,
                     FirstName= ue.Prenom,
-                    Photo = ue.Photo
+                    Birthdate=ue.DateNaiss,
+                    Photo = ue.Photo,
+                    Rue = ue.Rue,
+                    Numero = ue.Numero,
+                    Ville = ue.Ville,
+                    CP = ue.CP
+
                 };
             }
             else

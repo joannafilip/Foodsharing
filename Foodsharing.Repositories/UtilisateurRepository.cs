@@ -48,7 +48,7 @@ namespace Foodsharing.Repositories
         public bool Insert(UtilisateurEntity toInsert)
         {
             string requete = @"INSERT INTO Utilisateur (Nom, Prenom, DateNaiss, Email, Photo)
-                               VALUES (@Nom,  @Prenom, @DateNaiss, @Email, @Photo";
+                               VALUES (@Nom,  @Prenom, @DateNaiss, @Email, @Photo)";
             return base.Insert(toInsert, requete);
         }
 

@@ -10,13 +10,14 @@
 <div>Login: @Model.Login</div>
 <div>Name: @Model.Name</div>
 <div>Firstname: @Model.FirstName</div>
+<div>Birthdate: @Model.Birthdate.ToString("d MMM yyyy")</div>
+@*<img src="@Photo" width="150">*@
 <div>Photo: @Model.Photo</div>
-@*<div>Address</div>
-    <div>Street : @Model.Street</div>
-    <div>Number : @Model.Number</div>
-    <div>Post : @Model.CP</div>
-    <div>City : @Model.City</div>
-    <div>Birthdate: @Model.Birthdate</div>*@
+<div>Address</div>
+<div>Street: @Model.Rue Number: @Model.Numero</div>
+<div>CP: @Model.CP</div>
+<div>City: @Model.Ville</div>
+
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>

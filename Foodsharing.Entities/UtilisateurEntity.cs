@@ -9,7 +9,7 @@ namespace Foodsharing.Entities
    public class UtilisateurEntity
     {
 		private int _idUtilisateur;
-		private string _nom, _prenom, _photo, _email, _login, _password, _salt;
+		private string _nom, _prenom, _photo, _email, _login, _password, _salt, _rue, _cp, _ville, _numero;
 		private DateTime _dateNaiss;
     
 
@@ -120,6 +120,54 @@ namespace Foodsharing.Entities
             set
             {
                 _salt = value;
+            }
+        }
+        public string Rue
+        {
+            get
+            {
+                return _rue;
+            }
+
+            set
+            {
+                _rue = value;
+            }
+        }
+        public string Ville
+        {
+            get
+            {
+                return _ville;
+            }
+
+            set
+            {
+                _ville = value;
+            }
+        }
+        public string CP
+        {
+            get
+            {
+                return _cp;
+            }
+
+            set
+            {
+                _cp= value;
+            }
+        }
+        public string Numero
+        {
+            get
+            {
+                return _numero;
+            }
+
+            set
+            {
+                _numero = value;
             }
         }
     }
