@@ -32,7 +32,23 @@ namespace Foodsharing.Repositories
 
         public bool Insert(DonateProductEntity toInsert)
         {
-            throw new NotImplementedException();
+            string requete = @" EXEC @RC = [dbo].[SP_DonateProduct_Insert]
+                                                              @nameProduct
+                                                             ,@datePeremption
+                                                             ,@quantite
+                                                             ,@description
+                                                             ,@bio
+                                                             ,@nomMarque
+                                                             ,@pays
+                                                             ,@labelEtat
+                                                             ,@title
+                                                             ,@src
+                                                             ,@labelType
+                                                             ,@dateProposition
+                                                             ,@dateFin
+                                                             ,@idAdresse
+                                                             ,@idUtilisateur";
+            return base.Insert(toInsert, requete);
         }
 
         public bool Update(DonateProductEntity toUpdate)

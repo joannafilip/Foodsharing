@@ -17,6 +17,7 @@ namespace Foodsharing.Repositories
         IConcreteRepository<UtilisateurEntity> _utilisateurRepo;
         IConcreteRepository<TypeEntity> _typeRepo;
         IConcreteRepository<SignUpEntity> _signUpRepo;
+        IConcreteRepository<DonateProductEntity> _donateProductRepo;
 
         public DataContext(string connectionString)
     {
@@ -25,6 +26,7 @@ namespace Foodsharing.Repositories
         _utilisateurRepo = new UtilisateurRepository(connectionString);
         _typeRepo = new TypeRepository(connectionString);
         _signUpRepo = new SignUpRepository(connectionString);
+        _donateProductRepo = new DonateProductRepository(connectionString);
         }
 
         public bool SaveContact(ContactModel cm)
@@ -58,6 +60,25 @@ namespace Foodsharing.Repositories
             return _signUpRepo.Insert(signUp);
 
         }
+
+        public bool InsertProduct(ProfilModel pf)
+        {
+            DonateProductEntity dpe = new DonateProductEntity();
+            //dpe.IdUtilisateur = pf.IdUser;
+            //dpe.IdAdresse = pf.IdAdresse;
+            dpe.Quantite = pf.DonateProduct.Quantite;
+            dpe.Type = pf.DonateProduct.Type;
+            dpe.Nom = pf.DonateProduct.Nom;
+            dpe.Bio = pf.DonateProduct.Bio;
+            dpe.DateFin = pf.DonateProduct.DateFin;
+            dpe.DatePeremption = pf.DonateProduct.DatePeremption;
+            dpe.Photo = pf.DonateProduct.Photo;
+            dpe.Description = pf.DonateProduct.Description;
+            dpe.Etat = pf.DonateProduct.Etat;
+
+
+            return _donateProductRepo.Insert(dpe);
+        }
         public ProfilModel UserAuth(LoginModel lm)
         {
             UtilisateurEntity ue = ((UtilisateurRepository)_utilisateurRepo).GetFromLogin(lm.Login, lm.Password);
@@ -83,6 +104,8 @@ namespace Foodsharing.Repositories
                 return null;
             }
         }
+
+
 
         public List<ProductContent> GetPropositionsProducts()
     {

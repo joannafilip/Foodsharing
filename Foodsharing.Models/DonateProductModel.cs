@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,11 +10,11 @@ namespace Foodsharing.Models
     public class DonateProductModel
     {
         private int _quantite;
-        private string _nom, _description, _prenom, _type, _photo, _cp, _ville, _etat;
+        private string _nom, _description, _type, _photo, _etat;
         private DateTime _datePeremption, _dateFin;
         private bool _bio;
 
-
+        [Required]
         public int Quantite
         {
             get
@@ -26,6 +27,7 @@ namespace Foodsharing.Models
                 _quantite = value;
             }
         }
+        [Required]
         public string Nom
         {
             get
@@ -38,6 +40,7 @@ namespace Foodsharing.Models
                 _nom = value;
             }
         }
+        [Required]
         public string Type
         {
             get
@@ -50,6 +53,7 @@ namespace Foodsharing.Models
                 _type = value;
             }
         }
+        [Required]
         public string Etat
         {
             get
@@ -62,6 +66,7 @@ namespace Foodsharing.Models
                 _etat = value;
             }
         }
+        [Required]
         public string Photo
         {
             get
@@ -74,42 +79,7 @@ namespace Foodsharing.Models
                 _photo = value;
             }
         }
-        public string CP
-        {
-            get
-            {
-                return _cp;
-            }
-
-            set
-            {
-                _cp= value;
-            }
-        }
-        public string Ville
-        {
-            get
-            {
-                return _ville;
-            }
-
-            set
-            {
-                _ville = value;
-            }
-        }
-        public string Prenom
-        {
-            get
-            {
-                return _prenom;
-            }
-
-            set
-            {
-                _prenom = value;
-            }
-        }
+        [Required]
         public string Description
         {
             get
@@ -122,6 +92,7 @@ namespace Foodsharing.Models
                 _description = value;
             }
         }
+        [Required]
         public bool Bio
         {
             get
@@ -134,6 +105,7 @@ namespace Foodsharing.Models
                 _bio = value;
             }
         }
+        [Required]
         public DateTime DatePeremption
         {
             get
@@ -146,6 +118,7 @@ namespace Foodsharing.Models
                 _datePeremption = value;
             }
         }
+        [Required]
         public DateTime DateFin
         {
             get

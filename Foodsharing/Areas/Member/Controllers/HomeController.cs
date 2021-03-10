@@ -17,10 +17,23 @@ namespace Foodsharing.Areas.Member.Controllers
         {
             return View();
         }
+        [HttpGet]
         public ActionResult DonateProduct()
         {
-            return View(new DonateProductModel());
+
+            return View(SessionUtils.ConnectedUser);
         }
+        [HttpPost]
+        public ActionResult DonateProduct(ProfilModel pm)
+        {
+            DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
+            SessionUtils.ConnectedUser.IdUser = pm.IdUser;
+            SessionUtils.ConnectedUser.IdAdresse = pm.IdAdresse;
+            ctx.InsertProduct(pm);
+            return View(SessionUtils.ConnectedUser);
+
+        }
+
         [HttpGet]
         public ActionResult MyProfile()
         {

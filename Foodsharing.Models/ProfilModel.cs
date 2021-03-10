@@ -9,9 +9,10 @@ namespace Foodsharing.Models
 {
     public class ProfilModel
     {
-        private int _idUser;
+        private int _idUser, _idAdresse;
         private string _name, _firstName, _login, _email, _numero, _ville, _photo, _cp, _password, _rue;
         private DateTime _birthDate;
+        private DonateProductModel _donateProduct;
 
 
         public int IdUser
@@ -163,6 +164,30 @@ namespace Foodsharing.Models
             set
             {
                 _rue = value;
+            }
+        }
+        public DonateProductModel DonateProduct
+        {
+            get
+            {
+                return _donateProduct;
+            }
+
+            set
+            {
+                _donateProduct = value;
+            }
+        }
+        public int IdAdresse
+        {
+            get
+            {
+                return _idAdresse;
+            }
+
+            set
+            {
+                _idAdresse = value;
             }
         }
     }

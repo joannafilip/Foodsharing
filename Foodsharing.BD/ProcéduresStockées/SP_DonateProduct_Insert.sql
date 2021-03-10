@@ -12,15 +12,11 @@
 	@labelType NVARCHAR(50),
 	@dateProposition date,
 	@dateFin date,
-
-	--//manque adresse
-	@ville VARCHAR(32),
-	@cp VARCHAR(8)
-	--//manque utilisateur
-
+	@idAdresse INT,
+	@idUtilisateur INT
 
 AS
-DECLARE @idMarque INT, @idEtat INT,@idPhoto INT, @idAdresse INT, @idType INT, @idProduit INT
+DECLARE @idMarque INT, @idEtat INT,@idPhoto INT, @idType INT, @idProduit INT
 
 	INSERT INTO[Marque]([Nom], [Pays])
 	VALUES (@nomMarque, @pays)
@@ -29,10 +25,6 @@ DECLARE @idMarque INT, @idEtat INT,@idPhoto INT, @idAdresse INT, @idType INT, @i
 	INSERT INTO[Etat]([Label])
 	VALUES (@labelEtat)
 	SET @idEtat= @@IDENTITY
-
-	INSERT INTO[Photo]([Title], [Src])
-	VALUES (@title,@src)
-	SET @idPhoto= @@IDENTITY
 
 	INSERT INTO[Photo]([Title], [Src])
 	VALUES (@title,@src)

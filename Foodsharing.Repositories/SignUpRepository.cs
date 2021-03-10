@@ -34,19 +34,17 @@ namespace Foodsharing.Repositories
         public bool Insert(SignUpEntity toInsert)
         {
             string requete = @"EXECUTE [dbo].[SP_Adresse_Insert] 
-   @numero
-  ,@rue
-  ,@ville
-  ,@cp
-  ,@nom
-  ,@prenom
-  ,@dateNaiss
-  ,@email
-  ,@photo
-  ,@login
-  ,@password";
-
-
+                                                        @numero
+                                                        ,@rue
+                                                        ,@ville
+                                                        ,@cp
+                                                        ,@nom
+                                                        ,@prenom
+                                                        ,@dateNaiss
+                                                        ,@email
+                                                        ,@photo
+                                                        ,@login
+                                                        ,@password";
             return base.Insert(toInsert, requete);
         }
 

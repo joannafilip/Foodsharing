@@ -34,15 +34,5 @@ namespace Foodsharing.Infra
             set { HttpContext.Current.Session["ConnectedUser"] = value; }
 
         }
-        public static SignUpModel EnregisteredUser
-        {
-            get
-            {
-                return (SignUpModel)HttpContext.Current.Session["EnregisteredUser"];
-            }
-
-            set { HttpContext.Current.Session["EnregisteredUser"] = value; }
-
-        }
     }
 }

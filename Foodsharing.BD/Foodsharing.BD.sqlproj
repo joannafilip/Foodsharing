@@ -79,6 +79,7 @@
     <Build Include="Vues\V_GetRandom.sql" />
     <Build Include="ProcéduresStockées\SP_Check_Password.sql" />
     <Build Include="dbo\Tables\PropositionProduit.sql" />
+    <Build Include="ProcéduresStockées\SP_DonateProduct_Insert.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Foodsharing.BD.dbmdl" />

@@ -8,8 +8,8 @@ namespace Foodsharing.Entities
 {
    public class DonateProductEntity
     {
-        private int _quantite;
-        private string _nom, _description, _prenom, _type, _photo, _cp, _ville, _etat;
+        private int _quantite, _idAdresse, _idUtilisateur;
+        private string _nom, _description, _type, _photo, _etat;
         private DateTime _datePeremption, _dateFin;
         private bool _bio;
 
@@ -74,42 +74,7 @@ namespace Foodsharing.Entities
                 _photo = value;
             }
         }
-        public string CP
-        {
-            get
-            {
-                return _cp;
-            }
-
-            set
-            {
-                _cp = value;
-            }
-        }
-        public string Ville
-        {
-            get
-            {
-                return _ville;
-            }
-
-            set
-            {
-                _ville = value;
-            }
-        }
-        public string Prenom
-        {
-            get
-            {
-                return _prenom;
-            }
-
-            set
-            {
-                _prenom = value;
-            }
-        }
+    
         public string Description
         {
             get
@@ -156,6 +121,30 @@ namespace Foodsharing.Entities
             set
             {
                 _dateFin = value;
+            }
+        }
+        public int IdUtilisateur
+        {
+            get
+            {
+                return _idUtilisateur;
+            }
+
+            set
+            {
+                _idUtilisateur = value;
+            }
+        }
+        public int IdAdresse
+        {
+            get
+            {
+                return _idAdresse;
+            }
+
+            set
+            {
+                _idAdresse = value;
             }
         }
     }
