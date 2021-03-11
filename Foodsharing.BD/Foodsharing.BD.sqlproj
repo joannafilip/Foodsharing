@@ -56,30 +56,28 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="Tables" />
     <Folder Include="ProcéduresStockées" />
     <Folder Include="FonctionsScalaires" />
     <Folder Include="Vues" />
-    <Folder Include="dbo\" />
-    <Folder Include="dbo\Tables\" />
+    <Folder Include="Tables" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Tables\Etat.sql" />
-    <Build Include="Tables\Marque.sql" />
-    <Build Include="Tables\Photo.sql" />
-    <Build Include="Tables\PriseProduit.sql" />
-    <Build Include="Tables\Produit.sql" />
-    <Build Include="Tables\Type.sql" />
-    <Build Include="Tables\Utilisateur.sql" />
-    <Build Include="Tables\Message.sql" />
     <Build Include="ProcéduresStockées\SP_Adresse_Insert.sql" />
     <Build Include="FonctionsScalaires\SF_EncryptedPassword.sql" />
     <Build Include="FonctionsScalaires\SF_GenerateSalt.sql" />
     <Build Include="Vues\V_GetRandom.sql" />
     <Build Include="ProcéduresStockées\SP_Check_Password.sql" />
-    <Build Include="dbo\Tables\PropositionProduit.sql" />
     <Build Include="ProcéduresStockées\SP_DonateProduct_Insert.sql" />
-    <Build Include="dbo\Tables\Adresse_2.sql" />
+    <Build Include="Tables\Etat.sql" />
+    <Build Include="Tables\Marque.sql" />
+    <Build Include="Tables\Message.sql" />
+    <Build Include="Tables\Photo.sql" />
+    <Build Include="Tables\PriseProduit.sql" />
+    <Build Include="Tables\Produit.sql" />
+    <Build Include="Tables\Type.sql" />
+    <Build Include="Tables\Utilisateur.sql" />
+    <Build Include="Tables\Adresse.sql" />
+    <Build Include="Tables\PropositionProduit.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Foodsharing.BD.dbmdl" />
