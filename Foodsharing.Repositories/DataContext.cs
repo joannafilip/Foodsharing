@@ -64,8 +64,8 @@ namespace Foodsharing.Repositories
         public bool InsertProduct(ProfilModel pf)
         {
             DonateProductEntity dpe = new DonateProductEntity();
-            //dpe.IdUtilisateur = pf.IdUser;
-            //dpe.IdAdresse = pf.IdAdresse;
+            dpe.IdUtilisateur = pf.IdUser;
+            dpe.IdAdresse = pf.IdAdresse;
             dpe.Quantite = pf.DonateProduct.Quantite;
             dpe.Type = pf.DonateProduct.Type;
             dpe.Nom = pf.DonateProduct.Nom;
@@ -87,6 +87,8 @@ namespace Foodsharing.Repositories
             {
                 return new ProfilModel()
                 {
+                    IdAdresse = ue.IdAdresse,
+                    IdUser = ue.IdUtilisateur,
                     Login = ue.Login,
                     Name = ue.Nom,
                     FirstName= ue.Prenom,

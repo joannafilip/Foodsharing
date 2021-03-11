@@ -4,15 +4,18 @@ using Foodsharing.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
 namespace Foodsharing.Controllers
 {
+   
     public class AccountController : Controller
     {
         // GET: Account
+        private string[] valideImageType = { ".png", ".jpg", ".jpeg" };
 
         [HttpGet]
         public ActionResult MyAccount()
@@ -56,10 +59,33 @@ namespace Foodsharing.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SignUp(SignUpModel signUp)
+        public ActionResult SignUp(SignUpModel signUp, HttpPostedFileBase FilePicture)
         {
+
             if (ModelState.IsValid)
             {
+
+                //    if (FilePicture.ContentLength > 0 && FilePicture.ContentLength < 20000)
+                //    {
+                //        string extension = Path.GetExtension(FilePicture.FileName);
+                //        if (valideImageType.Contains(extension))
+                //        {
+
+                //            string destFolder = Path.Combine(Server.MapPath("~/images/Users"), SessionUtils.ConnectedUser.IdUser.ToString());
+                //            if (!Directory.Exists(destFolder))
+                //            {
+                //                Directory.CreateDirectory(destFolder);
+                //            }
+
+
+                //            FilePicture.SaveAs(Path.Combine(destFolder, FilePicture.FileName));
+
+
+                //            SessionUtils.ConnectedUser.Photo = FilePicture.FileName;
+                //        }
+                //    }
+
+
                 DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
 
                 if (ctx.SaveSignUp(signUp))

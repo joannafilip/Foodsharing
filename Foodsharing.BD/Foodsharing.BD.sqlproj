@@ -64,7 +64,6 @@
     <Folder Include="dbo\Tables\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Tables\Adresse.sql" />
     <Build Include="Tables\Etat.sql" />
     <Build Include="Tables\Marque.sql" />
     <Build Include="Tables\Photo.sql" />
@@ -80,6 +79,7 @@
     <Build Include="ProcéduresStockées\SP_Check_Password.sql" />
     <Build Include="dbo\Tables\PropositionProduit.sql" />
     <Build Include="ProcéduresStockées\SP_DonateProduct_Insert.sql" />
+    <Build Include="dbo\Tables\Adresse_2.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Foodsharing.BD.dbmdl" />

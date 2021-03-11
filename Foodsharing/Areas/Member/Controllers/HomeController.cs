@@ -24,14 +24,31 @@ namespace Foodsharing.Areas.Member.Controllers
             return View(SessionUtils.ConnectedUser);
         }
         [HttpPost]
-        public ActionResult DonateProduct(ProfilModel pm)
+        [ValidateAntiForgeryToken]
+        public ActionResult DonateProduct(DonateProductModel pm)
         {
             DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
-            SessionUtils.ConnectedUser.IdUser = pm.IdUser;
-            SessionUtils.ConnectedUser.IdAdresse = pm.IdAdresse;
-            ctx.InsertProduct(pm);
-            return View(SessionUtils.ConnectedUser);
+            if (ModelState.IsValid)
+            {
+                if(pm == null)
 
+                {
+                    ViewBag.Error = "Erreur";
+                    return RedirectToAction("Index", "Home", new { area = "" });
+                }
+                else
+                {
+                    SessionUtils.ConnectedUser.DonateProduct = pm;
+                    ctx.InsertProduct(SessionUtils.ConnectedUser);
+                    return View(SessionUtils.ConnectedUser);
+                }
+               
+                
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home", new { area = "" });
+            }
         }
 
         [HttpGet]

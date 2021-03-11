@@ -13,7 +13,7 @@ namespace Foodsharing.Models
         private string _name, _firstName, _login, _email, _numero, _ville, _photo, _cp, _password, _rue;
         private DateTime _birthDate;
         private DonateProductModel _donateProduct;
-
+ 
 
         public int IdUser
         {
