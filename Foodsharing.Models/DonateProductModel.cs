@@ -10,8 +10,8 @@ namespace Foodsharing.Models
     public class DonateProductModel
     {
         private int _quantite;
-        private string _nom, _description, _type, _photo, _etat;
-        private DateTime _datePeremption, _dateFin;
+        private string _nom, _description, _type, _src, _etat, _pays, _marque, _title;
+        private DateTime _datePeremption, _dateFin, _dateProposition ;
         private bool _bio;
 
         [Required]
@@ -67,16 +67,16 @@ namespace Foodsharing.Models
             }
         }
         [Required]
-        public string Photo
+        public string Src
         {
             get
             {
-                return _photo;
+                return _src;
             }
 
             set
             {
-                _photo = value;
+                _src = value;
             }
         }
         [Required]
@@ -119,6 +119,19 @@ namespace Foodsharing.Models
             }
         }
         [Required]
+        public DateTime DateProposition
+        {
+            get
+            {
+                return _dateProposition;
+            }
+
+            set
+            {
+                _dateProposition = value;
+            }
+        }
+        [Required]
         public DateTime DateFin
         {
             get
@@ -129,6 +142,45 @@ namespace Foodsharing.Models
             set
             {
                 _dateFin = value;
+            }
+        }
+        [Required]
+        public string Pays
+        {
+            get
+            {
+                return _pays;
+            }
+
+            set
+            {
+                _pays = value;
+            }
+        }
+        [Required]
+        public string Marque
+        { 
+            get
+            {
+                return _marque;
+            }
+
+            set
+            {
+                _marque = value;
+            }
+        }
+        [Required]
+        public string Title
+        {
+            get
+            {
+                return _title;
+            }
+
+            set
+            {
+                _title = value;
             }
         }
     }

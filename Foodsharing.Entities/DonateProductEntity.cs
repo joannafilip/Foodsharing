@@ -9,8 +9,8 @@ namespace Foodsharing.Entities
    public class DonateProductEntity
     {
         private int _quantite, _idAdresse, _idUtilisateur;
-        private string _nom, _description, _type, _photo, _etat;
-        private DateTime _datePeremption, _dateFin;
+        private string _nom, _description, _type, _src, _etat, _title, _nomMarque, _pays;
+        private DateTime _datePeremption, _dateFin, _dateProposition;
         private bool _bio;
 
 
@@ -62,16 +62,16 @@ namespace Foodsharing.Entities
                 _etat = value;
             }
         }
-        public string Photo
+        public string Src
         {
             get
             {
-                return _photo;
+                return _src;
             }
 
             set
             {
-                _photo = value;
+                _src = value;
             }
         }
     
@@ -123,6 +123,19 @@ namespace Foodsharing.Entities
                 _dateFin = value;
             }
         }
+
+        public DateTime DateProposition
+        {
+            get
+            {
+                return _dateProposition;
+            }
+
+            set
+            {
+                _dateProposition = value;
+            }
+        }
         public int IdUtilisateur
         {
             get
@@ -145,6 +158,42 @@ namespace Foodsharing.Entities
             set
             {
                 _idAdresse = value;
+            }
+        }
+        public string Title
+        {
+            get
+            {
+                return _title;
+            }
+
+            set
+            {
+                _title = value;
+            }
+        }
+        public string NomMarque
+        {
+            get
+            {
+                return _nomMarque;
+            }
+
+            set
+            {
+                _nomMarque = value;
+            }
+        }
+        public string Pays
+        {
+            get
+            {
+                return _pays;
+            }
+
+            set
+            {
+                _pays = value;
             }
         }
     }

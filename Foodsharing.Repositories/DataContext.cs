@@ -75,6 +75,8 @@ namespace Foodsharing.Repositories
             dpe.Photo = pf.DonateProduct.Photo;
             dpe.Description = pf.DonateProduct.Description;
             dpe.Etat = pf.DonateProduct.Etat;
+            dpe.DateProposition = pf.DonateProduct.DateProposition;
+            dpe.Title = pf.DonateProduct.;
 
 
             return _donateProductRepo.Insert(dpe);
