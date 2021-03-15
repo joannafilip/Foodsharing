@@ -22,7 +22,7 @@ namespace Foodsharing.Models
 
         public ProductViewModel()
         {
-             Product = ctx.GetPropositionsProducts();
+            Product = ctx.GetPropositionsProducts();
 
             TitlePost = new Widget();
             TitlePost.Title = "Recent Posts";

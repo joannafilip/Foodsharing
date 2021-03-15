@@ -24,7 +24,6 @@ namespace Foodsharing.Repositories
         public List<UtilisateurEntity> Get()
         {
             string requete = "Select  [Login], Nom, Prenom, DateNaiss, Photo, Email from Utilisateur";
-
             return base.Get(requete);
         }
 

@@ -44,6 +44,7 @@
     <Compile Include="AdresseRepository.cs" />
     <Compile Include="DataContext.cs" />
     <Compile Include="DonateProductRepository.cs" />
+    <Compile Include="GetSixLatestProductsRepository.cs" />
     <Compile Include="MessageRepository.cs" />
     <Compile Include="ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

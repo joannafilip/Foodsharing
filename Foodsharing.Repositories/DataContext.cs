@@ -18,6 +18,7 @@ namespace Foodsharing.Repositories
         IConcreteRepository<TypeEntity> _typeRepo;
         IConcreteRepository<SignUpEntity> _signUpRepo;
         IConcreteRepository<DonateProductEntity> _donateProductRepo;
+        IConcreteRepository<GetSixLatestPrductsEntity> _getSixRepo;
 
         public DataContext(string connectionString)
     {
@@ -27,6 +28,7 @@ namespace Foodsharing.Repositories
         _typeRepo = new TypeRepository(connectionString);
         _signUpRepo = new SignUpRepository(connectionString);
         _donateProductRepo = new DonateProductRepository(connectionString);
+        _getSixRepo = new GetSixLatestProductsRepository (connectionString);
         }
 
         public bool SaveContact(ContactModel cm)
@@ -144,11 +146,28 @@ namespace Foodsharing.Repositories
             return lpc;
         }
 
-        //public List<ProductContent> GetSixLatestProducts()
-        //{
+        public List<ProductContent> GetSixLatestProducts()
+        {
+            List<ProductContent> lpc = new List<ProductContent>(); //ModelVue
+            List<GetSixLatestPrductsEntity> sixProductsFromDb = _getSixRepo.Get();//Récupération mon entity
 
-        //}
+            foreach (GetSixLatestPrductsEntity prod in sixProductsFromDb)
+            {
+                ProductContent pc = new ProductContent();
+                    pc.Title = prod.NomProduit;
+                    pc.Text = prod.Description;
+                    pc.DatePeremption = prod.DatePeremption;
+                    pc.Bio = prod.Bio;
+                    pc.Quantite = prod.Quantite;
+                    pc.Nom = prod.Nom;
+                    pc.Prenom = prod.Prenom;
+                    pc.Type = prod.Type;
+                
+                lpc.Add(pc);
+            }
 
+            return lpc;
+        }
 
 
 
