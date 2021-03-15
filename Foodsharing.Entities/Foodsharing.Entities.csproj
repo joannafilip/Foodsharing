@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AdresseEntity.cs" />
     <Compile Include="DonateProductEntity.cs" />
+    <Compile Include="GetSixLatestProductsEntity.cs" />
     <Compile Include="MessageEntity.cs" />
     <Compile Include="ProductEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

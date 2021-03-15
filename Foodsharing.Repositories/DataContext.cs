@@ -67,16 +67,18 @@ namespace Foodsharing.Repositories
             dpe.IdUtilisateur = pf.IdUser;
             dpe.IdAdresse = pf.IdAdresse;
             dpe.Quantite = pf.DonateProduct.Quantite;
-            dpe.Type = pf.DonateProduct.Type;
-            dpe.Nom = pf.DonateProduct.Nom;
+            dpe.LabelType = pf.DonateProduct.Type;
+            dpe.NameProduct = pf.DonateProduct.Nom;
             dpe.Bio = pf.DonateProduct.Bio;
             dpe.DateFin = pf.DonateProduct.DateFin;
             dpe.DatePeremption = pf.DonateProduct.DatePeremption;
-            dpe.Photo = pf.DonateProduct.Photo;
+            dpe.Src= pf.DonateProduct.Src;
             dpe.Description = pf.DonateProduct.Description;
-            dpe.Etat = pf.DonateProduct.Etat;
+            dpe.LabelEtat = pf.DonateProduct.Etat;
             dpe.DateProposition = pf.DonateProduct.DateProposition;
-            dpe.Title = pf.DonateProduct.;
+            dpe.Title = pf.DonateProduct.Title;
+            dpe.Pays = pf.DonateProduct.Pays;
+            dpe.NomMarque = pf.DonateProduct.Marque;
 
 
             return _donateProductRepo.Insert(dpe);
@@ -142,7 +144,14 @@ namespace Foodsharing.Repositories
             return lpc;
         }
 
-    
+        //public List<ProductContent> GetSixLatestProducts()
+        //{
+
+        //}
+
+
+
+
 
 
 

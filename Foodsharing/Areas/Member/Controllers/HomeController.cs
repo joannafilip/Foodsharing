@@ -28,27 +28,27 @@ namespace Foodsharing.Areas.Member.Controllers
         public ActionResult DonateProduct(DonateProductModel pm)
         {
             DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+            //{
                 if(pm == null)
 
                 {
                     ViewBag.Error = "Erreur";
-                    return RedirectToAction("Index", "Home", new { area = "" });
+                    return RedirectToAction("Index", "DonateProduct", new { area = "" });
                 }
                 else
                 {
                     SessionUtils.ConnectedUser.DonateProduct = pm;
                     ctx.InsertProduct(SessionUtils.ConnectedUser);
-                    return View(SessionUtils.ConnectedUser);
-                }
+                    return RedirectToAction("Index", "Home", new { area = "" });
+            }
                
                 
-            }
-            else
-            {
-                return RedirectToAction("Index", "Home", new { area = "" });
-            }
+            //}
+            //else
+            //{
+            //    return RedirectToAction("Index", "Home", new { area = "" });
+            //}
         }
 
         [HttpGet]

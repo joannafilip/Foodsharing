@@ -35,7 +35,7 @@ DECLARE @idMarque INT, @idEtat INT,@idPhoto INT, @idType INT, @idProduit INT
 	SET @idType = @@IDENTITY
 
 	INSERT INTO[Produit]([Nom], [DatePeremption],[Quantite], [Description], [Bio], [IdMarque], [IdType], [IdEtat], [IdPhoto], [IdAdresse])
-	VALUES (@nameProduct,@datePeremption, @description, @quantite, @bio,@idMarque, @idType, @idEtat, @idPhoto, @idAdresse)
+	VALUES (@nameProduct,@datePeremption, @quantite, @description, @bio,@idMarque, @idType, @idEtat, @idPhoto, @idAdresse)
 	SET @idProduit= @@IDENTITY
 
 	INSERT INTO[PropositionProduit]([IdUtilisateur], [IdProduit], [DateProposition], [DateFin] )

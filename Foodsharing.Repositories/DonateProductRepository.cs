@@ -32,7 +32,7 @@ namespace Foodsharing.Repositories
 
         public bool Insert(DonateProductEntity toInsert)
         {
-            string requete = @" EXEC @RC = [dbo].[SP_DonateProduct_Insert]
+            string requete = @"EXEC [dbo].[SP_DonateProduct_Insert]
                                                               @nameProduct
                                                              ,@datePeremption
                                                              ,@quantite
