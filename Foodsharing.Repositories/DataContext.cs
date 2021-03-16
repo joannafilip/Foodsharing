@@ -118,33 +118,53 @@ namespace Foodsharing.Repositories
         public List<ProductContent> GetPropositionsProducts()
     {
             List<ProductContent> lpc = new List<ProductContent>(); //ModelVue
-            List<ProductEntity> productsFromDb = _productRepo.Get();//Récupération mon entity
-            List<UtilisateurEntity> usersFromDb = _utilisateurRepo.Get();//Récupération mon entity
-            List<TypeEntity> typesFromDb = _typeRepo.Get();//Récupération mon entity
-            
-            foreach (ProductEntity produit in productsFromDb)
+            List<GetSixLatestPrductsEntity> allProductsFromDb = ((GetSixLatestProductsRepository)_getSixRepo).GetAllProducts();//Récupération mon entity
+
+            foreach (GetSixLatestPrductsEntity prod in allProductsFromDb)
             {
                 ProductContent pc = new ProductContent();
-                pc.Title = produit.Nom;
-                pc.Text = produit.Description;
-                pc.DatePeremption = produit.DatePeremption;
-                pc.Bio = produit.Bio;
-                pc.Quantite = produit.Quantite;
-               
-                foreach (UtilisateurEntity utilisateur in usersFromDb)
-                {
-                pc.Nom = utilisateur.Nom;
-                pc.Prenom = utilisateur.Prenom;
-                }
-                foreach (TypeEntity type in typesFromDb)
-                {
-                pc.Type = type.Label;
-                }
+                pc.Title = prod.NomProduit;
+                pc.Text = prod.Description;
+                pc.DatePeremption = prod.DatePeremption;
+                pc.Bio = prod.Bio;
+                pc.Quantite = prod.Quantite;
+                pc.Nom = prod.Nom;
+                pc.Prenom = prod.Prenom;
+                pc.Type = prod.Type;
+
                 lpc.Add(pc);
-                }
-           
+            }
             return lpc;
         }
+
+        //List<ProductContent> lpc = new List<ProductContent>(); //ModelVue
+        //List<ProductEntity> productsFromDb = _productRepo.Get();//Récupération mon entity
+        //List<UtilisateurEntity> usersFromDb = _utilisateurRepo.Get();//Récupération mon entity
+        //List<TypeEntity> typesFromDb = _typeRepo.Get();//Récupération mon entity
+
+        //foreach (ProductEntity produit in productsFromDb)
+        //{
+        //    ProductContent pc = new ProductContent();
+        //    pc.Title = produit.Nom;
+        //    pc.Text = produit.Description;
+        //    pc.DatePeremption = produit.DatePeremption;
+        //    pc.Bio = produit.Bio;
+        //    pc.Quantite = produit.Quantite;
+
+        //    foreach (UtilisateurEntity utilisateur in usersFromDb)
+        //    {
+        //    pc.Nom = utilisateur.Nom;
+        //    pc.Prenom = utilisateur.Prenom;
+        //    }
+        //    foreach (TypeEntity type in typesFromDb)
+        //    {
+        //    pc.Type = type.Label;
+        //    }
+        //    lpc.Add(pc);
+        //    }
+
+        //return lpc;
+    //}
 
         public List<ProductContent> GetSixLatestProducts()
         {
@@ -165,16 +185,8 @@ namespace Foodsharing.Repositories
                 
                 lpc.Add(pc);
             }
-
             return lpc;
         }
-
-
-
-
-
-
-
 
 
     }

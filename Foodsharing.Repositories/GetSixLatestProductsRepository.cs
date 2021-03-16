@@ -26,6 +26,12 @@ namespace Foodsharing.Repositories
 
             return base.Get(requete);
         }
+        public List<GetSixLatestPrductsEntity> GetAllProducts()
+        {
+            string requete = "Select * from V_GetAllProducts";
+
+            return base.Get(requete);
+        }
 
         public GetSixLatestPrductsEntity GetOne(int PK)
         {

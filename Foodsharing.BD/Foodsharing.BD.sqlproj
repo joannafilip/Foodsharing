@@ -79,6 +79,7 @@
     <Build Include="ProcéduresStockées\SP_Check_Password.sql" />
     <Build Include="ProcéduresStockées\SP_DonateProduct_Insert.sql" />
     <Build Include="Vues\V_GetSixLatestProducts.sql" />
+    <Build Include="Vues\V_GetAllProducts.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Foodsharing.BD.dbmdl" />
