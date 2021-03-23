@@ -113,6 +113,16 @@ namespace Foodsharing.Repositories
             }
         }
 
+        public bool EditUserProfilePhoto(ProfilModel pm)
+        {
+         
+            UtilisateurEntity ue = new UtilisateurEntity();
+            ue.IdUtilisateur = pm.IdUser;
+            ue.Photo = pm.Photo;
+
+            return ((UtilisateurRepository)_utilisateurRepo).UpdatePhoto(ue);
+        }
+
 
 
         public List<ProductContent> GetPropositionsProducts()

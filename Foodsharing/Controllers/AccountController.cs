@@ -15,7 +15,7 @@ namespace Foodsharing.Controllers
     public class AccountController : Controller
     {
         // GET: Account
-        private string[] valideImageType = { ".png", ".jpg", ".jpeg" };
+       
 
         [HttpGet]
         public ActionResult MyAccount()
@@ -42,7 +42,7 @@ namespace Foodsharing.Controllers
                 {
                     SessionUtils.IsLogged = true;
                     SessionUtils.ConnectedUser = pf;
-                    return RedirectToAction("MyProfile", "Home", new { area = "Member" });
+                    return RedirectToAction("Index", "Home", new { area = "Member" });
                 }
             }
             else
@@ -64,35 +64,13 @@ namespace Foodsharing.Controllers
 
             if (ModelState.IsValid)
             {
-
-                //    if (FilePicture.ContentLength > 0 && FilePicture.ContentLength < 20000)
-                //    {
-                //        string extension = Path.GetExtension(FilePicture.FileName);
-                //        if (valideImageType.Contains(extension))
-                //        {
-
-                //            string destFolder = Path.Combine(Server.MapPath("~/images/Users"), SessionUtils.ConnectedUser.IdUser.ToString());
-                //            if (!Directory.Exists(destFolder))
-                //            {
-                //                Directory.CreateDirectory(destFolder);
-                //            }
-
-
-                //            FilePicture.SaveAs(Path.Combine(destFolder, FilePicture.FileName));
-
-
-                //            SessionUtils.ConnectedUser.Photo = FilePicture.FileName;
-                //        }
-                //    }
-
-
                 DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
 
                 if (ctx.SaveSignUp(signUp))
                 {
                     SessionUtils.IsLogged = true;
                     //ViewBag.SuccessMessage = "Hello, you're a member of Foodsharing community!";
-                    return RedirectToAction("Index", "Home", new { area = "Member" });
+                    return RedirectToAction("MyAccount", "Account");
                 }
                 else
                 {

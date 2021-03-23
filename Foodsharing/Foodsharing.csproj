@@ -192,6 +192,7 @@
     <Content Include="Areas\Member\Views\Home\Index.cshtml" />
     <Content Include="Areas\Member\Views\Home\DonateProduct.cshtml" />
     <Content Include="Areas\Member\Views\Home\MyProfile.cshtml" />
+    <Content Include="Areas\Member\Views\Home\EditPhoto.cshtml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />

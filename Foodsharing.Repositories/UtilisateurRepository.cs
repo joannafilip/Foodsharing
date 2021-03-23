@@ -55,6 +55,13 @@ namespace Foodsharing.Repositories
         {
             throw new NotImplementedException();
         }
+        public bool UpdatePhoto(UtilisateurEntity toUpdate)
+        {
+            string request = @"UPDATE [Utilisateur]
+                        SET [Photo]=@Photo
+                        WHERE IdUtilisateur=@IdUtilisateur";
+            return base.Update(toUpdate, request);
+        }
     }
     
 }

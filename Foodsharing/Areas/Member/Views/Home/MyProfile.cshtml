@@ -7,12 +7,25 @@
 
 <h2>MyProfile</h2>
 
+@{
+    string ProfilePhoto = "";
+    if (Model.Photo == null || Model.Photo == "")
+    {
+        ProfilePhoto = "https://www.pngitem.com/pimgs/m/146-1468843_profile-icon-orange-png-transparent-png.png";
+    }
+    else
+    {
+        ProfilePhoto = "/images/Users/" + Model.IdUser + "/" + Model.Photo;
+    }
+}
 <div>Login: @Model.Login</div>
 <div>Name: @Model.Name</div>
 <div>Firstname: @Model.FirstName</div>
 <div>Birthdate: @Model.Birthdate.ToString("d MMM yyyy")</div>
-@*<img src="@Photo" width="150">*@
-<div>Photo: @Model.Photo</div>
+
+
+<a href="~/Member/Home/EditPhoto" class="profile-edit-btn btn btn-light">Change Photo</a>
+<img src="@ProfilePhoto" alt="" />
 <div>Address</div>
 <div>Street: @Model.Rue Number: @Model.Numero</div>
 <div>CP: @Model.CP</div>

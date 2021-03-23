@@ -5,7 +5,7 @@
 	[Prenom] NVARCHAR (64) NOT NULL,
 	[DateNaiss] DATE NOT NULL,
 	[Email] VARCHAR (64) NOT NULL,
-	[Photo] NVARCHAR (256)NOT NULL ,
+	[Photo] NVARCHAR(MAX) NULL ,
 	[Login] VARCHAR(16) NULL, 
     [Password] VARBINARY(32) NULL, 
     [Salt] CHAR(8) NULL, 
