@@ -20,22 +20,25 @@
                     </div><!-- end post-media -->
                 </div><!-- end left-side -->
             }
-            </div>
+        </div>
         </div>
 </section>
+
 <section class="section wb">
+    <p class="h1 text-center mb-5 bg-aqua"><a>Top Six Products</a></p>
     <div class="container">
         <div class="row">
             <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                 <div class="page-wrapper">
+
                     @{
                         Html.RenderPartial("~/Views/Shared/_Product.cshtml", Model.TopProduct);
                     }
                 </div><!-- end page-wrapper -->
             </div><!-- end col -->
             @*@{
-                Html.RenderPartial("~/Views/Shared/_Widget.cshtml");
-            }*@
+                    Html.RenderPartial("~/Views/Shared/_Widget.cshtml");
+                }*@
         </div><!-- end row -->
     </div><!-- end container -->
 </section>

@@ -29,6 +29,8 @@ namespace Foodsharing
                       ));
             bundles.Add(new StyleBundle("~/Content/profil").Include(
                       "~/css/styleProfil.css"));
+            bundles.Add(new StyleBundle("~/Content/login").Include(
+                      "~/css/styleLogin.css"));
             bundles.Add(new StyleBundle("~/Content/singleProduct").Include(
                      "~/css/styleProductSinglePage.css"));
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(

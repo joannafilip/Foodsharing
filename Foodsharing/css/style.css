@@ -28,6 +28,10 @@ body {
     background-color: #ffffff;
 }
 
+.topProducts {
+    font-size: !important 150%;
+}
+
 h1,
 h2,
 h3,

@@ -83,7 +83,7 @@ namespace Foodsharing.Areas.Member.Controllers
 
                     SessionUtils.ConnectedUser.Photo = FilePicture.FileName;
                     ctx.EditUserProfilePhoto(SessionUtils.ConnectedUser);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("MyProfile", "Home");
                 }
             }
             return View(SessionUtils.ConnectedUser);
