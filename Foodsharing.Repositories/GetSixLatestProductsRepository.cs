@@ -38,6 +38,41 @@ namespace Foodsharing.Repositories
             throw new NotImplementedException();
         }
 
+        public List<GetSixLatestPrductsEntity> GetProductAllPage(string sortOrder,  string searchString, int page)
+        {
+            string requete = $@"Select * from V_GetAllProducts";
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                requete += " WHERE NomProduit LIKE '%" + searchString + "%' ";
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    requete += " order by NomProduit DESC ";
+                    break;
+                case "Date":
+                    requete += " order by DatePeremption ASC ";
+                    break;
+                case "date_desc":
+                    requete += " order by DatePeremption  DESC ";
+                    break;
+                default:
+                    requete += " order by NomProduit ";
+                    break;
+            }
+
+
+
+            int nbParPage = 5;
+            int skip = (page - 1) * 5;
+            requete += $@"  OFFSET  {skip} ROWS 
+                                FETCH NEXT {nbParPage} ROWS ONLY";
+
+            return base.Get(requete);
+        }
+
+
         public bool Insert(GetSixLatestPrductsEntity toInsert)
         {
             throw new NotImplementedException();

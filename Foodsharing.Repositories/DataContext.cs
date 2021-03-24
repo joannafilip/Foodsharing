@@ -125,7 +125,10 @@ namespace Foodsharing.Repositories
             return ((UtilisateurRepository)_utilisateurRepo).UpdatePhoto(ue);
         }
 
-
+        public int CountProductsAllPage(string sortOrder, string searchString, int page)
+        {
+            return ((GetSixLatestProductsRepository)_getSixRepo).GetProductAllPage(sortOrder, searchString, page).Count();
+        }
 
         public List<ProductContent> GetPropositionsProducts()
     {

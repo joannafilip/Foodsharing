@@ -18,7 +18,24 @@ namespace Foodsharing.Models
         private Widget _advertising;
         private List<Widget> _popularCategorie;
         private Widget _categorie;
+        private int _maxProduct, _maxPage;
 
+        public void PaginateProduct(string sortOrder = "", string searchString = null, int page = 1)
+        {
+          
+
+                MaxProduct = ctx.CountProductsAllPage(sortOrder, searchString, page);
+                if ((MaxProduct % 9) == 0)
+                {
+                    MaxPage = MaxProduct/ 9;
+                }
+                else
+                {
+                    double nbPage = MaxProduct / 9;
+                    MaxPage = (int)Math.Floor(nbPage) + 1;
+                }
+            
+        }
 
         public ProductViewModel()
         {
@@ -60,12 +77,6 @@ namespace Foodsharing.Models
             PopularCategorie.Add(new Widget() { UnderTitle = "Indoor Living", Number = 22 });
             PopularCategorie.Add(new Widget() { UnderTitle = "Shopping Guides", Number = 19 });
             PopularCategorie.Add(new Widget() { UnderTitle = "Pool Design", Number = 16 });
-
-
-
-
-
-
 
         }
         public List<ProductContent> Product
@@ -164,5 +175,31 @@ namespace Foodsharing.Models
                 _categorie = value;
             }
         }
+        public int MaxProduct
+        {
+            get
+            {
+                return _maxProduct;
+            }
+
+            set
+            {
+                _maxProduct = value;
+            }
+        }
+
+        public int MaxPage
+        {
+            get
+            {
+                return _maxPage;
+            }
+
+            set
+            {
+                _maxPage = value;
+            }
+        }
     }
+
 }

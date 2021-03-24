@@ -58,9 +58,16 @@ namespace Foodsharing.Controllers
 
         }
            
-        public ActionResult Product()
+        public ActionResult Product(string sortOrder = "", string searchString = null, int page = 1)
         {
+            DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
+
+            //ViewBag.DateSort = String.IsNullOrEmpty(sortOrder) ? "date_desc" : "";
+            //ViewBag.PriceSort = sortOrder == "price_desc" ? "price_asc" : "price_desc";
+            //ViewBag.Class = "active";
+            //ViewBag.Message = "Your class page.";
             ProductViewModel productViewModel = new ProductViewModel();
+            //ctx.PaginateProduct (sortOrder, searchString, page);
 
             return View(productViewModel);
 
