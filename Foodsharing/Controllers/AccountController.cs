@@ -42,7 +42,7 @@ namespace Foodsharing.Controllers
                 {
                     SessionUtils.IsLogged = true;
                     SessionUtils.ConnectedUser = pf;
-                    return RedirectToAction("Index", "Home", new { area = "Member" });
+                    return RedirectToAction("MyProfile", "Home", new { area = "Member" });
                 }
             }
             else

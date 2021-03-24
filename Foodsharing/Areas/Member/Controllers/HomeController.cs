@@ -15,10 +15,7 @@ namespace Foodsharing.Areas.Member.Controllers
     {
         // GET: Member/Home
         private string[] valideImageType = { ".png", ".jpg", ".jpeg" };
-        public ActionResult Index()
-        {
-            return View();
-        }
+
         [HttpGet]
         public ActionResult DonateProduct()
         {
