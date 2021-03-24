@@ -12,7 +12,7 @@ AS
 	IF (@newPassword = @hPassword)
 	BEGIN 
 		--SELECT [Login], Nom, Prenom, DateNaiss, Photo, Email, IdUtilisateur FROM Utilisateur WHERE login=@login 
-	select Utilisateur.[Login], Utilisateur.Nom, Utilisateur.Prenom, Utilisateur.Datenaiss, Utilisateur.Photo, Utilisateur.Email, Rue, Ville, Numero, CP, IdAdresse, Utilisateur.IdUtilisateur
+	select Utilisateur.[Login], Utilisateur.Nom, Utilisateur.Prenom, Utilisateur.Datenaiss, Utilisateur.Photo, Utilisateur.Email, Rue, Ville, Numero, CP, IdAdresse, Utilisateur.IdUtilisateur, Utilisateur.Telephone
 	FROM Utilisateur 
 	INNER JOIN  Adresse ON Utilisateur.idUtilisateur = Adresse.IdUtilisateur where [login] = @login 
 	--	SELECT Rue, Ville, Numero, CP FROM Adresse INNER JOIN Utilisateur ON Utilisateur.IdUtilisateur = Adresse.IdUtilisateur

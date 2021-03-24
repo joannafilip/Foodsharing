@@ -9,6 +9,7 @@
 	[Login] VARCHAR(16) NULL, 
     [Password] VARBINARY(32) NULL, 
     [Salt] CHAR(8) NULL, 
+    [Telephone] VARCHAR(50) NULL, 
     PRIMARY KEY CLUSTERED ([IdUtilisateur] ASC)
 
 )

@@ -58,7 +58,8 @@ namespace Foodsharing.Repositories
             signUp.Photo = sm.Photo;
             signUp.Password = sm.Password;
             signUp.Login = sm.Login;
-           
+            signUp.Telephone = sm.Telephone;
+
             return _signUpRepo.Insert(signUp);
 
         }
@@ -103,7 +104,8 @@ namespace Foodsharing.Repositories
                     Rue = ue.Rue,
                     Numero = ue.Numero,
                     Ville = ue.Ville,
-                    CP = ue.CP
+                    CP = ue.CP,
+                    Telephone = ue.Telephone
 
                 };
             }

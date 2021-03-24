@@ -9,7 +9,7 @@ namespace Foodsharing.Entities
     public class SignUpEntity
     {
         private int _idAdresse, _idUtilisateur;
-        private string _numero, _rue, _ville, _cp, _nom, _prenom, _photo, _email, _login, _password, _salt;
+        private string _numero, _rue, _ville, _cp, _nom, _prenom, _photo, _email, _login, _password, _salt, _telephone;
         private DateTime _dateNaiss;
 
         public int IdUtilisateur
@@ -179,6 +179,18 @@ namespace Foodsharing.Entities
             set
             {
                 _salt = value;
+            }
+        }
+        public string Telephone
+        {
+            get
+            {
+                return _telephone;
+            }
+
+            set
+            {
+                _telephone = value;
             }
         }
     }

@@ -9,13 +9,14 @@
 	@dateNaiss DATE,
 	@email VARCHAR (64) ,
 	@photo NVARCHAR (256),
+	@telephone VARCHAR (50),
 	@login VARCHAR(16),
 	@password NVARCHAR(32)
 AS
 DECLARE @idUtilisateur INT, @salt CHAR(8)
 	SET @salt = [dbo].SF_GenerateSalt()
-	INSERT INTO[Utilisateur]([Nom], [Prenom], [DateNaiss], [Email], [Photo], [Login], [Password], [Salt])
-	VALUES (@nom, @prenom, @dateNaiss, @email, @photo, @login, dbo.SF_EncryptedPassword(@password, @salt),@salt)
+	INSERT INTO[Utilisateur]([Nom], [Prenom], [DateNaiss], [Email], [Photo], [Telephone],[Login], [Password], [Salt])
+	VALUES (@nom, @prenom, @dateNaiss, @email, @photo, @telephone, @login, dbo.SF_EncryptedPassword(@password, @salt),@salt)
 	SET @idUtilisateur = @@IDENTITY
 
 	INSERT INTO[Adresse]([Numero], [Rue], [Ville], [CP],[IdUtilisateur] )

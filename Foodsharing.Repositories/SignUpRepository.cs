@@ -43,6 +43,7 @@ namespace Foodsharing.Repositories
                                                         ,@dateNaiss
                                                         ,@email
                                                         ,@photo
+                                                        ,@telephone
                                                         ,@login
                                                         ,@password";
             return base.Insert(toInsert, requete);
