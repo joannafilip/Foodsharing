@@ -145,6 +145,7 @@
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\responsive.css" />
     <Content Include="css\style.css" />
+    <Content Include="css\styleProductSinglePage.css" />
     <Content Include="css\styleProfil.css" />
     <Content Include="css\version\garden.css" />
     <Content Include="favicon.ico" />
@@ -281,6 +282,7 @@
     <Content Include="Views\Account\SignUp.cshtml" />
     <Content Include="Views\Shared\_Product.cshtml" />
     <Content Include="Views\Home\View.cshtml" />
+    <Content Include="Views\Home\SingleProductPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

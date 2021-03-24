@@ -63,7 +63,17 @@ namespace Foodsharing.Controllers
             ProductViewModel productViewModel = new ProductViewModel();
 
             return View(productViewModel);
+
         }
+
+        public ActionResult SingleProductPage()
+        {
+            
+
+            return View(new ProductContent());
+
+        }
+
         public ActionResult Blog()
         {
             ProductViewModel productViewModel = new ProductViewModel();
