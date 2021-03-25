@@ -128,10 +128,10 @@ namespace Foodsharing.Repositories
         }
 
 
-        public List<ProductContent> GetProductModelByPage(int page)
+        public List<ProductContent> GetProductModelByPage(int page, string searchString)
         {
             List<ProductContent> lpc = new List<ProductContent>(); //ModelVue
-            List<GetSixLatestPrductsEntity> allProductsFromDb = ((GetSixLatestProductsRepository)_getSixRepo).GetProductEntityByPage(page);//Récupération mon entity
+            List<GetSixLatestPrductsEntity> allProductsFromDb = ((GetSixLatestProductsRepository)_getSixRepo).GetProductEntityByPage(page, searchString);//Récupération mon entity
 
             foreach (GetSixLatestPrductsEntity prod in allProductsFromDb)
             {
@@ -155,9 +155,9 @@ namespace Foodsharing.Repositories
             return ((GetSixLatestProductsRepository)_getSixRepo).GetAllProducts().Count();
         }
 
-        public int CountProductsAllPage(int page)
+        public int CountProductsAllPage(int page, string searchString)
         {
-            return ((GetSixLatestProductsRepository)_getSixRepo).GetProductEntityByPage(page).Count();
+            return ((GetSixLatestProductsRepository)_getSixRepo).GetProductEntityByPage(page, searchString).Count();
         }
 
         public List<ProductContent> GetPropositionsProducts()

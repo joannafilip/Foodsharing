@@ -20,11 +20,11 @@ namespace Foodsharing.Models
         private Widget _categorie;
         private int _maxProduct, _maxPage;
 
-        public void paginateProduct(int page = 1)
+        public void paginateProduct(int page = 1, string searchString = null)
         {
            
-            Product = ctx.GetProductModelByPage(page);
-            MaxProduct= ctx.CountProductsAllPage(page);
+            Product = ctx.GetProductModelByPage(page, searchString);
+            MaxProduct= ctx.CountProductsAllPage(page, searchString);
             if ((MaxProduct % 3) == 0)
             {
                 MaxPage = MaxProduct / 3;

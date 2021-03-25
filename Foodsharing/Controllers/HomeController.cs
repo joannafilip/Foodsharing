@@ -58,11 +58,11 @@ namespace Foodsharing.Controllers
 
         }
            
-        public ActionResult Product(int page = 1)
+        public ActionResult Product(int page = 1, string searchString = null)
         {
            
             ProductViewModel productViewModel = new ProductViewModel();
-            productViewModel.paginateProduct(page);
+            productViewModel.paginateProduct(page, searchString);
 
             return View(productViewModel);
 

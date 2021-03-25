@@ -38,14 +38,14 @@ namespace Foodsharing.Repositories
             throw new NotImplementedException();
         }
 
-        public List<GetSixLatestPrductsEntity> GetProductEntityByPage( int page)
+        public List<GetSixLatestPrductsEntity> GetProductEntityByPage( int page, string searchString)
         {
-            string requete = $@"Select * from V_GetAllProducts order by NomProduit ";
+            string requete = $@"Select * from V_GetAllProducts";
 
-            //if (!String.IsNullOrEmpty(searchString))
-            //{
-            //    requete += " WHERE NomProduit LIKE '%" + searchString + "%' ";
-            //}
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                requete += " WHERE NomProduit LIKE '%" + searchString + "%' ";
+            }
             //switch (sortOrder)
             //{
             //    case "name_desc":
@@ -64,49 +64,22 @@ namespace Foodsharing.Repositories
 
 
 
-            int nbParPage = 5;
-            int skip = (page - 1) * 5;
-            requete += $@"  OFFSET  {skip} ROWS 
-                                FETCH NEXT {nbParPage} ROWS ONLY";
-
+            int nbPerPage = 6;
+            int skip = (page - 1) * nbPerPage;
+            requete += $@" ORDER BY NomProduit OFFSET {skip} ROWS 
+                        FETCH NEXT {nbPerPage} ROWS ONLY ";
             return base.Get(requete);
         }
 
-        public List<GetSixLatestPrductsEntity> GetProductEntityAllPage(int page)
+        public List<GetSixLatestPrductsEntity> GetProductEntityAllPage(int page, string searchString)
         {
             string requete = $@"SELECT * FROM V_GetAllProducts";
 
-            //if (!String.IsNullOrEmpty(searchString))
-            //{
-            //    requete += " WHERE ClassName LIKE '%" + searchString + "%' ";
-            //    if (!String.IsNullOrEmpty(category))
-            //    {
-            //        requete += $" AND CategoryName = '{category}' ";
-            //    }
-            //}
-            //else
-            //{
-            //    if (!String.IsNullOrEmpty(category))
-            //    {
-            //        requete += $" WHERE CategoryName = '{category}' ";
-            //    }
-            //}
-
-            //switch (sortOrder)
-            //{
-            //    case "price_desc":
-            //        requete += " ORDER BY Price DESC ";
-            //        break;
-            //    case "price_asc":
-            //        requete += " ORDER BY Price ASC ";
-            //        break;
-            //    case "date_desc":
-            //        requete += " ORDER BY Date DESC ";
-            //        break;
-            //    default:
-            //        requete += " ORDER BY Date ";
-            //        break;
-            //}
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                requete += " WHERE NomProduit LIKE '%" + searchString + "%' ";
+            }
+           
             return base.Get(requete);
         }
 
