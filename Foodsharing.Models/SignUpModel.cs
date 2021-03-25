@@ -40,8 +40,7 @@ namespace Foodsharing.Models
                 _prenom = value;
             }
         }
-        [Required]
-        [MaxLength(150)]
+
         public string Photo
         {
             get

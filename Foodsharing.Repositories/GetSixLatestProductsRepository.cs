@@ -38,29 +38,29 @@ namespace Foodsharing.Repositories
             throw new NotImplementedException();
         }
 
-        public List<GetSixLatestPrductsEntity> GetProductAllPage(string sortOrder,  string searchString, int page)
+        public List<GetSixLatestPrductsEntity> GetProductEntityByPage( int page)
         {
-            string requete = $@"Select * from V_GetAllProducts";
+            string requete = $@"Select * from V_GetAllProducts order by NomProduit ";
 
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                requete += " WHERE NomProduit LIKE '%" + searchString + "%' ";
-            }
-            switch (sortOrder)
-            {
-                case "name_desc":
-                    requete += " order by NomProduit DESC ";
-                    break;
-                case "Date":
-                    requete += " order by DatePeremption ASC ";
-                    break;
-                case "date_desc":
-                    requete += " order by DatePeremption  DESC ";
-                    break;
-                default:
-                    requete += " order by NomProduit ";
-                    break;
-            }
+            //if (!String.IsNullOrEmpty(searchString))
+            //{
+            //    requete += " WHERE NomProduit LIKE '%" + searchString + "%' ";
+            //}
+            //switch (sortOrder)
+            //{
+            //    case "name_desc":
+            //        requete += " order by NomProduit DESC ";
+            //        break;
+            //    case "Date":
+            //        requete += " order by DatePeremption ASC ";
+            //        break;
+            //    case "date_desc":
+            //        requete += " order by DatePeremption  DESC ";
+            //        break;
+            //    default:
+            //        requete += " order by NomProduit ";
+            //        break;
+            //}
 
 
 
@@ -72,6 +72,43 @@ namespace Foodsharing.Repositories
             return base.Get(requete);
         }
 
+        public List<GetSixLatestPrductsEntity> GetProductEntityAllPage(int page)
+        {
+            string requete = $@"SELECT * FROM V_GetAllProducts";
+
+            //if (!String.IsNullOrEmpty(searchString))
+            //{
+            //    requete += " WHERE ClassName LIKE '%" + searchString + "%' ";
+            //    if (!String.IsNullOrEmpty(category))
+            //    {
+            //        requete += $" AND CategoryName = '{category}' ";
+            //    }
+            //}
+            //else
+            //{
+            //    if (!String.IsNullOrEmpty(category))
+            //    {
+            //        requete += $" WHERE CategoryName = '{category}' ";
+            //    }
+            //}
+
+            //switch (sortOrder)
+            //{
+            //    case "price_desc":
+            //        requete += " ORDER BY Price DESC ";
+            //        break;
+            //    case "price_asc":
+            //        requete += " ORDER BY Price ASC ";
+            //        break;
+            //    case "date_desc":
+            //        requete += " ORDER BY Date DESC ";
+            //        break;
+            //    default:
+            //        requete += " ORDER BY Date ";
+            //        break;
+            //}
+            return base.Get(requete);
+        }
 
         public bool Insert(GetSixLatestPrductsEntity toInsert)
         {

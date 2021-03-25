@@ -11,6 +11,7 @@ namespace Foodsharing.Models
         private string _title, _image, _text, _type, _nom, _prenom;
         private DateTime _datePeremption;
         private bool _bio;
+        private int _maxProduct, _maxPage;
         public string Title
         {
             get
@@ -117,6 +118,31 @@ namespace Foodsharing.Models
             set
             {
                 _quantite = value;
+            }
+        }
+        public int MaxProduct
+        {
+            get
+            {
+                return _maxProduct;
+            }
+
+            set
+            {
+                _maxProduct = value;
+            }
+        }
+
+        public int MaxPage
+        {
+            get
+            {
+                return _maxPage;
+            }
+
+            set
+            {
+                _maxPage = value;
             }
         }
 

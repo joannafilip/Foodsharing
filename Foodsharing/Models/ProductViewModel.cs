@@ -20,25 +20,37 @@ namespace Foodsharing.Models
         private Widget _categorie;
         private int _maxProduct, _maxPage;
 
-        public void PaginateProduct(string sortOrder = "", string searchString = null, int page = 1)
+        public void paginateProduct(int page = 1)
         {
-          
+           
+            Product = ctx.GetProductModelByPage(page);
+            MaxProduct= ctx.CountProductsAllPage(page);
+            if ((MaxProduct % 3) == 0)
+            {
+                MaxPage = MaxProduct / 3;
+            }
+            else
+            {
+                double nbPage = MaxProduct / 3;
+                MaxPage = (int)Math.Floor(nbPage) + 1;
+            }
 
-                MaxProduct = ctx.CountProductsAllPage(sortOrder, searchString, page);
-                if ((MaxProduct % 9) == 0)
-                {
-                    MaxPage = MaxProduct/ 9;
-                }
-                else
-                {
-                    double nbPage = MaxProduct / 9;
-                    MaxPage = (int)Math.Floor(nbPage) + 1;
-                }
-            
+
         }
-
         public ProductViewModel()
         {
+            MaxProduct = ctx.CountProducts();
+            if ((MaxProduct % 3) == 0)
+            {
+                MaxPage = MaxProduct / 3;
+            }
+            else
+            {
+                double nbPage = MaxProduct / 3;
+                MaxPage = (int)Math.Floor(nbPage) + 1;
+            }
+
+
             Product = ctx.GetPropositionsProducts();
 
             TitlePost = new Widget();
@@ -91,6 +103,7 @@ namespace Foodsharing.Models
                 _product = value;
             }
         }
+ 
         public List<Widget> RecentPost
         {
             get

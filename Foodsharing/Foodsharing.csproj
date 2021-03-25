@@ -148,6 +148,7 @@
     <Content Include="css\styleLogin.css" />
     <Content Include="css\styleProductSinglePage.css" />
     <Content Include="css\styleProfil.css" />
+    <Content Include="css\styleSignUp.css" />
     <Content Include="css\version\garden.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />

@@ -1,8 +1,5 @@
-﻿<div class="blog-list clearfix">
-    @*@{
-        Html.RenderPartial("~/Views/Shared/_paginate.cshtml", new ViewDataDictionary { { "MaxPage", Model.MaxPage } });
-    }*@
-
+﻿
+<div class="blog-list clearfix">
     @foreach (Foodsharing.Models.ProductContent item in Model)
     {
         <div class="blog-box row">
@@ -38,9 +35,5 @@
         </div><!-- end blog-box -->
         <hr class="invis">
     }
-
-    @*@{
-        Html.RenderPartial("~/Views/Shared/_paginate.cshtml", new ViewDataDictionary { { "MaxPage", Model.MaxPage } });
-    }*@
 
 </div> @*end blog-list*@

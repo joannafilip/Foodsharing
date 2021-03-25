@@ -31,6 +31,7 @@ namespace Foodsharing.Repositories
         _getSixRepo = new GetSixLatestProductsRepository (connectionString);
         }
 
+
         public bool SaveContact(ContactModel cm)
         {
             MessageEntity me = new MessageEntity();
@@ -105,7 +106,8 @@ namespace Foodsharing.Repositories
                     Numero = ue.Numero,
                     Ville = ue.Ville,
                     CP = ue.CP,
-                    Telephone = ue.Telephone
+                    Telephone = ue.Telephone,
+                    Email = ue.Email
 
                 };
             }
@@ -125,9 +127,37 @@ namespace Foodsharing.Repositories
             return ((UtilisateurRepository)_utilisateurRepo).UpdatePhoto(ue);
         }
 
-        public int CountProductsAllPage(string sortOrder, string searchString, int page)
+
+        public List<ProductContent> GetProductModelByPage(int page)
         {
-            return ((GetSixLatestProductsRepository)_getSixRepo).GetProductAllPage(sortOrder, searchString, page).Count();
+            List<ProductContent> lpc = new List<ProductContent>(); //ModelVue
+            List<GetSixLatestPrductsEntity> allProductsFromDb = ((GetSixLatestProductsRepository)_getSixRepo).GetProductEntityByPage(page);//Récupération mon entity
+
+            foreach (GetSixLatestPrductsEntity prod in allProductsFromDb)
+            {
+                ProductContent pc = new ProductContent();
+                pc.Title = prod.NomProduit;
+                pc.Text = prod.Description;
+                pc.DatePeremption = prod.DatePeremption;
+                pc.Bio = prod.Bio;
+                pc.Quantite = prod.Quantite;
+                pc.Nom = prod.Nom;
+                pc.Prenom = prod.Prenom;
+                pc.Type = prod.Type;
+
+                lpc.Add(pc);
+            }
+            return lpc;
+        }
+
+        public int CountProducts()
+        {
+            return ((GetSixLatestProductsRepository)_getSixRepo).GetAllProducts().Count();
+        }
+
+        public int CountProductsAllPage(int page)
+        {
+            return ((GetSixLatestProductsRepository)_getSixRepo).GetProductEntityByPage(page).Count();
         }
 
         public List<ProductContent> GetPropositionsProducts()

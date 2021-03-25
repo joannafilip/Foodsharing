@@ -1,5 +1,8 @@
-﻿<div class="pagination">
-    <ul>
+﻿@model Foodsharing.Models.ProductViewModel
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-start">
+
+
         @{
             int MaxPage = ViewData["MaxPage"] == null ? 0 : int.Parse(ViewData["MaxPage"].ToString());
             int prev = 0, next = 2, current = 1;
@@ -31,7 +34,7 @@
 
             if (prev > 0)
             {
-                <li class="prev"><a href="@URLprev"><span class="fa fa-angle-double-left"></span></a></li>
+                <li class="page-item"><a href="@URLprev" class="page-link"><span class="fa fa-angle-double-left"></span></a></li>
             }
             for (int i = current - 1; i < current && i < MaxPage; i++)
             {
@@ -39,38 +42,40 @@
                 {
                     if (Request.QueryString.HasKeys())
                     {
-                        <li><a href="@URLClean&Page=@i">@i</a></li>
+                        <li class="page-item"><a href="@URLClean&Page=@i" class="page-link">@i</a></li>
                     }
                     else
                     {
-                        <li><a href="@URLClean?Page=@i">@i</a></li>
+                        <li class="page-item"><a href="@URLClean?Page=@i" class="page-link">@i</a></li>
                     }
                 }
             }
             if (Request.QueryString.HasKeys())
             {
-                <li><a href="@URLClean&Page=@current" class="active">@current</a></li>
+                <li class="page-item"><a href="@URLClean&Page=@current" class="page-link">@current</a></li>
             }
             else
             {
-                <li><a href="@URLClean?Page=@current" class="active">@current</a></li>
+                <li class="page-item"><a href="@URLClean?Page=@current" class="page-link">@current</a></li>
             }
             for (int i = current + 1; i < current + 2 && i <= MaxPage; i++)
             {
                 if (Request.QueryString.HasKeys())
                 {
-                    <li><a href="@URLClean&Page=@i">@i</a></li>
+                    <li class="page-item"><a href="@URLClean&Page=@i" class="page-link">@i</a></li>
                 }
                 else
                 {
-                    <li><a href="@URLClean?Page=@i">@i</a></li>
+                    <li class="page-item"><a href="@URLClean?Page=@i" class="page-link">@i</a></li>
                 }
             }
 
             if (next <= MaxPage)
             {
-                <li class="next"><a href="@URLnext"><span class="fa fa-angle-double-right"></span></a></li>
+                <li class="page-item"><a href="@URLnext" class="page-link">Next</a></li>
+
             }
         }
+        <a class="page-link" href="#"></a>
     </ul>
-</div>
+</nav>

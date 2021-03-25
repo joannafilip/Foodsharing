@@ -33,6 +33,8 @@ namespace Foodsharing
                       "~/css/styleLogin.css"));
             bundles.Add(new StyleBundle("~/Content/singleProduct").Include(
                      "~/css/styleProductSinglePage.css"));
+            bundles.Add(new StyleBundle("~/Content/signUp").Include(
+                     "~/css/styleSignUp.css"));
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.min.js"));
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(

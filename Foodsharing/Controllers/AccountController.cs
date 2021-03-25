@@ -59,7 +59,7 @@ namespace Foodsharing.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SignUp(SignUpModel signUp, HttpPostedFileBase FilePicture)
+        public ActionResult SignUp(SignUpModel signUp)
         {
 
             if (ModelState.IsValid)

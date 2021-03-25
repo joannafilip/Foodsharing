@@ -288,11 +288,13 @@ namespace Foodsharing.DAL.Repositories
                 {
                     if (oDr[item.Name] == DBNull.Value)
                     {
+
                         //    retour.Nom = null;
                         item.SetValue(retour, null);
                     }
                     else
                     {
+                       
                         //    retour.Nom = oDr["Nom"].ToString();
                         item.SetValue(retour, oDr[item.Name]);
                     }
@@ -319,27 +321,35 @@ namespace Foodsharing.DAL.Repositories
             //Mapping
             foreach (PropertyInfo item in maClasse.GetProperties())
             {
-                SqlParameter param = new SqlParameter();
-                param.ParameterName = item.Name;
+                if (item.PropertyType == typeof(DateTime) && (DateTime)item.GetValue(toMap)== DateTime.MinValue)
+                {
 
-                //Un Sqlparameter = null (c#) ==> default côté DB
-                //Un sqlparameter = DBNull.Value(c#) ==> null côté DB
+                }
+                else
+                {
+                    SqlParameter param = new SqlParameter();
+                    param.ParameterName = item.Name;
 
-
-                param.Value = item.GetValue(toMap)?? DBNull.Value; //Coalesce
-                // if(item.GetValue(toMap)==null) 
-                //       param.Value =DBNull.value ;
-                // else
-                //       param.Value =item.GetValue(toMap);
-
-                // param.Value = item.GetValue(toMap) ==null? DBNull.value : item.GetValue(toMap);
+                    //Un Sqlparameter = null (c#) ==> default côté DB
+                    //Un sqlparameter = DBNull.Value(c#) ==> null côté DB
 
 
+                    param.Value = item.GetValue(toMap) ?? DBNull.Value; //Coalesce
+                                                                        // if(item.GetValue(toMap)==null) 
+                                                                        //       param.Value =DBNull.value ;
+                                                                        // else
+                                                                        //       param.Value =item.GetValue(toMap);
 
-                //Exemple :
-                //  param.SqlDbType= System.Data.SqlDbType.NVarChar ~= string ==> Dépend du type de la propriété
-                //  param.Size = 50;
-                parametres.Add(param);
+                    // param.Value = item.GetValue(toMap) ==null? DBNull.value : item.GetValue(toMap);
+
+
+
+                    //Exemple :
+                    //  param.SqlDbType= System.Data.SqlDbType.NVarChar ~= string ==> Dépend du type de la propriété
+                    //  param.Size = 50;
+                    parametres.Add(param);
+                }
+               
             }
 
             return parametres.ToArray();
