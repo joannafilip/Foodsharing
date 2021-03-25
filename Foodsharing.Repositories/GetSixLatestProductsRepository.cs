@@ -37,15 +37,31 @@ namespace Foodsharing.Repositories
         {
             throw new NotImplementedException();
         }
-
-        public List<GetSixLatestPrductsEntity> GetProductEntityByPage( int page, string searchString)
+        public List<GetSixLatestPrductsEntity> GetProductEntityByType(string type)
+        {
+            string requete = @"EXEC [SP_GetTypeProduit] '" + type + "'";
+            return base.Get(requete);
+        }
+        public List<GetSixLatestPrductsEntity> GetProductEntityByPage( int page, string searchString, string type)
         {
             string requete = $@"Select * from V_GetAllProducts";
 
             if (!String.IsNullOrEmpty(searchString))
             {
                 requete += " WHERE NomProduit LIKE '%" + searchString + "%' ";
+                if (!String.IsNullOrEmpty(type))
+                {
+                    requete += $" AND Type = '{type}' ";
+                }
             }
+            else
+            {
+                if (!String.IsNullOrEmpty(type))
+                {
+                    requete += $" WHERE Type = '{type}' ";
+                }
+            }
+
             //switch (sortOrder)
             //{
             //    case "name_desc":
@@ -63,7 +79,6 @@ namespace Foodsharing.Repositories
             //}
 
 
-
             int nbPerPage = 6;
             int skip = (page - 1) * nbPerPage;
             requete += $@" ORDER BY NomProduit OFFSET {skip} ROWS 
@@ -71,15 +86,26 @@ namespace Foodsharing.Repositories
             return base.Get(requete);
         }
 
-        public List<GetSixLatestPrductsEntity> GetProductEntityAllPage(int page, string searchString)
+        public List<GetSixLatestPrductsEntity> GetProductEntityAllPage(int page, string searchString, string type)
         {
             string requete = $@"SELECT * FROM V_GetAllProducts";
 
             if (!String.IsNullOrEmpty(searchString))
             {
                 requete += " WHERE NomProduit LIKE '%" + searchString + "%' ";
+                if (!String.IsNullOrEmpty(type))
+                {
+                    requete += $" AND Type = '{type}' ";
+                }
             }
-           
+            else
+            {
+                if (!String.IsNullOrEmpty(type))
+                {
+                    requete += $" WHERE Type = '{type}' ";
+                }
+            }
+
             return base.Get(requete);
         }
 
