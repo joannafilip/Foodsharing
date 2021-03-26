@@ -64,7 +64,6 @@ namespace Foodsharing.Repositories
             return _signUpRepo.Insert(signUp);
 
         }
-
         public bool InsertProduct(ProfilModel pf)
         {
             DonateProductEntity dpe = new DonateProductEntity();
@@ -116,7 +115,6 @@ namespace Foodsharing.Repositories
                 return null;
             }
         }
-
         public bool EditUserProfilePhoto(ProfilModel pm)
         {
          
@@ -126,8 +124,10 @@ namespace Foodsharing.Repositories
 
             return ((UtilisateurRepository)_utilisateurRepo).UpdatePhoto(ue);
         }
-
-
+        public int CountProducts()
+        {
+            return ((GetSixLatestProductsRepository)_getSixRepo).GetAllProducts().Count();
+        }
         public List<ProductContent> GetProductModelByPage(int page, string searchString, string type, string sortOrder)
         {
             List<ProductContent> lpc = new List<ProductContent>(); //ModelVue
@@ -149,19 +149,35 @@ namespace Foodsharing.Repositories
             }
             return lpc;
         }
-
-        public int CountProducts()
-        {
-            return ((GetSixLatestProductsRepository)_getSixRepo).GetAllProducts().Count();
-        }
-
         public int CountProductsAllPage(int page, string searchString, string type, string sortOrder)
         {
             return ((GetSixLatestProductsRepository)_getSixRepo).GetProductEntityByPage(page, searchString, type, sortOrder).Count();
         }
+        public int CountProductByType(string type)
+        {
+
+            List<GetSixLatestPrductsEntity> productsByTypeFromDb = ((GetSixLatestProductsRepository)_getSixRepo).GetProductEntityByType(type);
+            int number= productsByTypeFromDb.Count();
+            return number;
+        }
+
+        public List<Widget> GetAllTypes()
+        {
+            // Get all types from DB
+            List<TypeEntity> typeListFromDB = _typeRepo.Get();
+            List<Widget> typesForController= new List<Widget>();
+            foreach (TypeEntity item in typeListFromDB)
+            {
+                Widget w= new Widget();
+                w.UnderTitle= item.Label;
+                //w.Number = item.IdType;
+                typesForController.Add(w);
+            }
+            return typesForController;
+        }
 
         public List<ProductContent> GetPropositionsProducts()
-    {
+        {
             List<ProductContent> lpc = new List<ProductContent>(); //ModelVue
             List<GetSixLatestPrductsEntity> allProductsFromDb = ((GetSixLatestProductsRepository)_getSixRepo).GetAllProducts();//Récupération mon entity
 
@@ -181,7 +197,6 @@ namespace Foodsharing.Repositories
             }
             return lpc;
         }
-
         //List<ProductContent> lpc = new List<ProductContent>(); //ModelVue
         //List<ProductEntity> productsFromDb = _productRepo.Get();//Récupération mon entity
         //List<UtilisateurEntity> usersFromDb = _utilisateurRepo.Get();//Récupération mon entity
@@ -210,7 +225,6 @@ namespace Foodsharing.Repositories
 
         //return lpc;
     //}
-
         public List<ProductContent> GetSixLatestProducts()
         {
             List<ProductContent> lpc = new List<ProductContent>(); //ModelVue

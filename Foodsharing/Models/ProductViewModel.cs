@@ -42,6 +42,7 @@ namespace Foodsharing.Models
         }
         public ProductViewModel()
         {
+
             MaxProduct = ctx.CountProducts();
             if ((MaxProduct % 3) == 0)
             {
@@ -84,15 +85,13 @@ namespace Foodsharing.Models
             InstagramPhoto.Add(new Widget() { Image = "garden_sq_09.jpg" });
 
             //Popular Categories
+            PopularCategorie = ctx.GetAllTypes();
+            foreach (Widget item in PopularCategorie)
+            {
+                item.Number= ctx.CountProductByType(item.UnderTitle);
+            }
             Categorie = new Widget();
             Categorie.Title = "Popular Categories";
-            PopularCategorie = new List<Widget>();
-            PopularCategorie.Add(new Widget() { UnderTitle = "Gardening", Number = 2 });
-            PopularCategorie.Add(new Widget() { UnderTitle = "Outdoor Living", Number = 4 });
-            PopularCategorie.Add(new Widget() { UnderTitle = "Indoor Living", Number = 22 });
-            PopularCategorie.Add(new Widget() { UnderTitle = "Shopping Guides", Number = 19 });
-            PopularCategorie.Add(new Widget() { UnderTitle = "Pool Design", Number = 16 });
-
         }
         public List<ProductContent> Product
         {
