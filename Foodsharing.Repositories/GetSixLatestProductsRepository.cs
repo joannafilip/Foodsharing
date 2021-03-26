@@ -42,7 +42,7 @@ namespace Foodsharing.Repositories
             string requete = @"EXEC [SP_GetTypeProduit] '" + type + "'";
             return base.Get(requete);
         }
-        public List<GetSixLatestPrductsEntity> GetProductEntityByPage( int page, string searchString, string type)
+        public List<GetSixLatestPrductsEntity> GetProductEntityByPage( int page, string searchString, string type, string sortOrder)
         {
             string requete = $@"Select * from V_GetAllProducts";
 
@@ -62,31 +62,31 @@ namespace Foodsharing.Repositories
                 }
             }
 
-            //switch (sortOrder)
-            //{
-            //    case "name_desc":
-            //        requete += " order by NomProduit DESC ";
-            //        break;
-            //    case "Date":
-            //        requete += " order by DatePeremption ASC ";
-            //        break;
-            //    case "date_desc":
-            //        requete += " order by DatePeremption  DESC ";
-            //        break;
-            //    default:
-            //        requete += " order by NomProduit ";
-            //        break;
-            //}
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    requete += " ORDER BY NomProduit DESC ";
+                    break;
+                case "date_asc":
+                    requete += " ORDER BY DatePeremption ASC ";
+                    break;
+                case "date_desc":
+                    requete += " ORDER BY DatePeremption DESC ";
+                    break;
+                default:
+                    requete += " ORDER BY NomProduit ";
+                    break;
+            }
 
 
             int nbPerPage = 6;
             int skip = (page - 1) * nbPerPage;
-            requete += $@" ORDER BY NomProduit OFFSET {skip} ROWS 
+            requete += $@" OFFSET {skip} ROWS 
                         FETCH NEXT {nbPerPage} ROWS ONLY ";
             return base.Get(requete);
         }
 
-        public List<GetSixLatestPrductsEntity> GetProductEntityAllPage(int page, string searchString, string type)
+        public List<GetSixLatestPrductsEntity> GetProductEntityAllPage(int page, string searchString, string type, string sortOrder)
         {
             string requete = $@"SELECT * FROM V_GetAllProducts";
 
@@ -104,6 +104,21 @@ namespace Foodsharing.Repositories
                 {
                     requete += $" WHERE Type = '{type}' ";
                 }
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    requete += " ORDER BY NomProduit DESC ";
+                    break;
+                case "date_asc":
+                    requete += " ORDER BY DatePeremption ASC ";
+                    break;
+                case "date_desc":
+                    requete += " ORDER BY DatePeremption DESC ";
+                    break;
+                default:
+                    requete += " ORDER BY NomProduit ";
+                    break;
             }
 
             return base.Get(requete);
