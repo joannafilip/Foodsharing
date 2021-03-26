@@ -15,7 +15,7 @@
             <h6 class="mt-3">let's light some fire and get the show on the road...</h6>
             <div class="footerS">
                 <div class="socials d-flex flex-row justify-content-between text-white">
-                    <div class="d-flex flex-row"><i class="fab fa-linkedin-in"></i><i class="fab fa-facebook-f"></i><i class="fab fa-twitter"></i></div> <span>Privacy Policy</span> <span>&copy; 2020 Stoke</span>
+                    <div class="d-flex flex-row"></div><span>&copy; 2021 Foodsharing</span>
                 </div>
             </div>
         </div>
@@ -24,56 +24,47 @@
                 @Html.AntiForgeryToken()
                 <h2 class="heading mb-4">Sign up</h2>
                 <div class="form-group fone mt-2">
-                    <i class="fas fa-user"></i>
                     <input type="text" name="Nom" class="form-control" placeholder="Name">
                     @Html.ValidationMessageFor(model => model.Nom, "", new { @class = "text-danger" })
                 </div>
                 <div class="form-group fone mt-2">
-                    <i class="fas fa-envelope"></i>
                     <input type="text" name="Prenom" class="form-control" placeholder="First Name">
                     @Html.ValidationMessageFor(model => model.Prenom, "", new { @class = "text-danger" })
                 </div>
                 <div class="form-group fone mt-2">
-                    <i class="fas fa-envelope"></i>
                     <input type="email" name="Email" class="form-control" placeholder="Email">
                     @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                 </div>
                 <div class="form-group fone mt-2">
-                    <i class="fas fa-envelope"></i>
                     <input type="date" name="DateNaiss" class="form-control" placeholder="Birthdate">
                     @Html.ValidationMessageFor(model => model.DateNaiss, "", new { @class = "text-danger" })
                 </div>
                 <div class="form-group fone mt-2">
-                    <i class="fas fa-envelope"></i>
                     <input type="text" name="Rue" class="form-control" placeholder="Street">
                     @Html.ValidationMessageFor(model => model.Rue, "", new { @class = "text-danger" })
                 </div>
                 <div class="form-group fone mt-2">
-                    <i class="fas fa-envelope"></i>
                     <input type="text" name="Numero" class="form-control" placeholder="Number">
                     @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
                 </div>
                 <div class="form-group fone mt-2">
-                    <i class="fas fa-envelope"></i>
                     <input type="text" name="Ville" class="form-control" placeholder="City">
                     @Html.ValidationMessageFor(model => model.Ville, "", new { @class = "text-danger" })
                 </div>
                 <div class="form-group fone mt-2">
-                    <i class="fas fa-envelope"></i>
                     <input type="text" name="CP" class="form-control" placeholder="Postal code">
                     @Html.ValidationMessageFor(model => model.CP, "", new { @class = "text-danger" })
                 </div>
                 <div class="form-group fone mt-2">
-                    <i class="fas fa-envelope"></i>
                     <input type="text" name="Login" class="form-control" placeholder="Login">
                     @Html.ValidationMessageFor(model => model.Login, "", new { @class = "text-danger" })
                 </div>
                 <div class="form-group fone mt-2">
-                    <i class="fas fa-envelope"></i>
                     <input type="password" name="Password" class="form-control" placeholder="Password">
                     @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                 </div>
-                <input type="checkbox" class="form-check-input ml-0" id="exampleCheck1"> <label class="form-check-label ml-3" for="exampleCheck1">I agree to Stoke <u>Terms</u> and <u>Privacy Policy</u></label>
+                <input type="checkbox" class="form-check-input ml-0" id="exampleCheck1"> 
+                <label class="form-check-label ml-3" for="exampleCheck1">I agree to Foodsharing <u>Terms</u> and <u>Privacy Policy</u></label>
                 <div><button type="submit" class="btn btn-success mt-5">Get satrted now</button></div>
             </form> 
         
@@ -86,7 +77,7 @@
             {
                 @:<div class="alert alert-danger">@ViewBag.ErrorMessage</div>
             }
-            <p class="exist mt-4">Existing user? <span>Log in</span></p>
+            <p class="exist mt-4">Existing user? <span><a href="/Account/MyAccount">Log in </a></span></p>
         </div>
     </div>
 </div>

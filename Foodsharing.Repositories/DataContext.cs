@@ -19,6 +19,7 @@ namespace Foodsharing.Repositories
         IConcreteRepository<SignUpEntity> _signUpRepo;
         IConcreteRepository<DonateProductEntity> _donateProductRepo;
         IConcreteRepository<GetSixLatestPrductsEntity> _getSixRepo;
+        IConcreteRepository<OneProductEntity> _getOneProductRepo;
 
         public DataContext(string connectionString)
     {
@@ -29,6 +30,7 @@ namespace Foodsharing.Repositories
         _signUpRepo = new SignUpRepository(connectionString);
         _donateProductRepo = new DonateProductRepository(connectionString);
         _getSixRepo = new GetSixLatestProductsRepository (connectionString);
+        _getOneProductRepo = new OneProductRepository(connectionString);
         }
 
 
@@ -160,7 +162,6 @@ namespace Foodsharing.Repositories
             int number= productsByTypeFromDb.Count();
             return number;
         }
-
         public List<Widget> GetAllTypes()
         {
             // Get all types from DB
@@ -175,7 +176,6 @@ namespace Foodsharing.Repositories
             }
             return typesForController;
         }
-
         public List<ProductContent> GetPropositionsProducts()
         {
             List<ProductContent> lpc = new List<ProductContent>(); //ModelVue
@@ -247,6 +247,25 @@ namespace Foodsharing.Repositories
             return lpc;
         }
 
+        public ProductContent SingleProductPage(int PK)
+        {
+            ProductContent pc= new ProductContent(); //ModelVue
+            OneProductEntity oneProductPage = _getOneProductRepo.GetOne(PK);//Récupération mon entity
+            pc.Quantite = oneProductPage.Quantite;
+            pc.Type = oneProductPage.Type;
+            pc.Title = oneProductPage.NomProduit;
+            pc.Bio = oneProductPage.Bio;
+            pc.DatePeremption = oneProductPage.DatePeremption;
+            pc.Image = oneProductPage.Src;
+            pc.Text= oneProductPage.Description;
+            pc.Etat = oneProductPage.Etat;
+            pc.DateProposition = oneProductPage.DateProposition;
+            pc.Title = oneProductPage.Title;
+            pc.Marque = oneProductPage.Marque;
+            pc.IdProduit = oneProductPage.IdProduit;
+
+            return pc;
+        }
 
     }
 }

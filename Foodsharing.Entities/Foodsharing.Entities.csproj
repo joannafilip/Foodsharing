@@ -45,6 +45,7 @@
     <Compile Include="DonateProductEntity.cs" />
     <Compile Include="GetSixLatestProductsEntity.cs" />
     <Compile Include="MessageEntity.cs" />
+    <Compile Include="OneProductEntity.cs" />
     <Compile Include="ProductEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropositionProductEntity.cs" />

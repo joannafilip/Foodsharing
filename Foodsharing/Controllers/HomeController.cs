@@ -69,11 +69,13 @@ namespace Foodsharing.Controllers
 
         }
 
-        public ActionResult SingleProductPage()
+        public ActionResult SingleProductPage(int id)
         {
-            
 
-            return View(new ProductContent());
+            DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
+            ViewBag.IndexClass = id;
+            ctx.SingleProductPage(id);
+            return View();
 
         }
 

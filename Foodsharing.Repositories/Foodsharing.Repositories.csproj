@@ -46,6 +46,7 @@
     <Compile Include="DonateProductRepository.cs" />
     <Compile Include="GetSixLatestProductsRepository.cs" />
     <Compile Include="MessageRepository.cs" />
+    <Compile Include="OneProductRepository.cs" />
     <Compile Include="ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignUpRepository.cs" />
