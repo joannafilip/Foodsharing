@@ -13,12 +13,14 @@ namespace Foodsharing.Models
         private string _name, _firstName, _login, _email, _numero, _ville, _photo, _cp, _password, _rue, _telephone;
         private DateTime _birthDate;
         private DonateProductModel _donateProduct;
- 
+        private List<DonateProductModel> _listDonateProducts;
+
 
         public int IdUser
         {
             get
-            {
+            { 
+            
                 return _idUser;
             }
 
@@ -176,6 +178,18 @@ namespace Foodsharing.Models
             set
             {
                 _donateProduct = value;
+            }
+        }
+        public List <DonateProductModel> ListDonateProducts
+        {
+            get
+            {
+                return _listDonateProducts;
+            }
+
+            set
+            {
+                _listDonateProducts = value;
             }
         }
         public int IdAdresse

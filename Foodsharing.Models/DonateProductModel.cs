@@ -9,7 +9,7 @@ namespace Foodsharing.Models
 {
     public class DonateProductModel
     {
-        private int _quantite;
+        private int _quantite, _idType;
         private string _nom, _description, _type, _src, _etat, _pays, _marque, _title;
         private DateTime _datePeremption, _dateFin, _dateProposition ;
         private bool _bio;
@@ -25,6 +25,18 @@ namespace Foodsharing.Models
             set
             {
                 _quantite = value;
+            }
+        }
+        public int IdType
+        {
+            get
+            {
+                return _idType;
+            }
+
+            set
+            {
+                _idType= value;
             }
         }
         [Required]
