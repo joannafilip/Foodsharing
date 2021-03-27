@@ -64,7 +64,6 @@ namespace Foodsharing.Controllers
             ViewBag.NameSort = sortOrder == "name_desc" ? "" : "name_desc";
             ProductViewModel productViewModel = new ProductViewModel();
             productViewModel.paginateProduct(page, searchString);
-
             return View(productViewModel);
 
         }
@@ -73,9 +72,10 @@ namespace Foodsharing.Controllers
         {
 
             DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
-            ViewBag.IndexClass = id;
-            ctx.SingleProductPage(id);
-            return View();
+            ViewBag.IndexProduct = id;
+            ProductViewModel pwm= new ProductViewModel();
+            pwm.TargetProduct = ctx.SingleProductPage(id);
+            return View(pwm);
 
         }
 

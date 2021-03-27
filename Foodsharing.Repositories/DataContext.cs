@@ -33,7 +33,6 @@ namespace Foodsharing.Repositories
         _getOneProductRepo = new OneProductRepository(connectionString);
         }
 
-
         public bool SaveContact(ContactModel cm)
         {
             MessageEntity me = new MessageEntity();
@@ -146,6 +145,7 @@ namespace Foodsharing.Repositories
                 pc.Nom = prod.Nom;
                 pc.Prenom = prod.Prenom;
                 pc.Type = prod.Type;
+                pc.IdProduit = prod.IdProduit;
 
                 lpc.Add(pc);
             }
@@ -192,6 +192,7 @@ namespace Foodsharing.Repositories
                 pc.Nom = prod.Nom;
                 pc.Prenom = prod.Prenom;
                 pc.Type = prod.Type;
+                pc.IdProduit = prod.IdProduit;
 
                 lpc.Add(pc);
             }
@@ -241,12 +242,12 @@ namespace Foodsharing.Repositories
                     pc.Nom = prod.Nom;
                     pc.Prenom = prod.Prenom;
                     pc.Type = prod.Type;
-                
+                    pc.IdProduit = prod.IdProduit;
+
                 lpc.Add(pc);
             }
             return lpc;
         }
-
         public ProductContent SingleProductPage(int PK)
         {
             ProductContent pc= new ProductContent(); //ModelVue

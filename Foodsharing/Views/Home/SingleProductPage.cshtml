@@ -1,4 +1,4 @@
-﻿@model Foodsharing.Models.ProductContent
+﻿@model Foodsharing.Models.ProductViewModel
 @Styles.Render("~/Content/singleProduct")
 <div class="containerP bg-white">
     <div class="row">
@@ -9,7 +9,7 @@
                     <div id="coupon">
                         <div class="h4 text-uppercase">coupon</div>
                     </div>
-                    <h1 class="text-uppercase">burger</h1>
+                    <h1 class="text-uppercase">@Model.TargetProduct.Text</h1>
                     <h1 class="text-uppercase pl-md-4 pl-sm-2">world</h1>
                 </div>
                 <div class="d-md-flex flex-md-row" id="validity">
@@ -43,7 +43,7 @@
                 </div>
                 <div class="btn px-xl-5 px-lg-4 px-md-3 px-sm-5 px-4">
                     <div class="d-flex flex-column">
-                        <div><span class="fa fa-star-o fa-2x">@Model.IdProduit</span></div>
+                        <div><span class="fa fa-star-o fa-2x">@Model.TargetProduct.Bio</span></div>
                         <div class="text-uppercase font-weight-bold">save</div>
                     </div>
                 </div>

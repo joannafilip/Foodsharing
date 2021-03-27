@@ -132,7 +132,6 @@
     </Compile>
     <Compile Include="Infra\SessionUtils.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
-    <Compile Include="Models\OneProductViewModel.cs" />
     <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

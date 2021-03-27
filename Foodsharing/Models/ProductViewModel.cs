@@ -18,6 +18,7 @@ namespace Foodsharing.Models
         private Widget _advertising;
         private List<Widget> _popularCategorie;
         private Widget _categorie;
+        private ProductContent _targetProduct;
         private int _maxProduct, _maxPage;
        
 
@@ -55,13 +56,7 @@ namespace Foodsharing.Models
                 MaxPage = (int)Math.Floor(nbPage) + 1;
             }
 
-            ////One Product By Page
-
-            //TargetProduct = ctx.SingleProductPage()
-
-
             Product = ctx.GetPropositionsProducts();
-
             TitlePost = new Widget();
             TitlePost.Title = "Recent Posts";
             //Recent Posts
@@ -192,6 +187,18 @@ namespace Foodsharing.Models
             set
             {
                 _categorie = value;
+            }
+        }
+        public ProductContent TargetProduct
+        {
+            get
+            {
+                return _targetProduct;
+            }
+
+            set
+            {
+                _targetProduct = value;
             }
         }
         public int MaxProduct

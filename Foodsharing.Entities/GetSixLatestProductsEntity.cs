@@ -8,7 +8,7 @@ namespace Foodsharing.Entities
 {
     public class GetSixLatestPrductsEntity
     {
-        private int _quantite;
+        private int _quantite, _idProduit;
         private string _nomProduit, _description, _marque, _utilisateurNom, _prenom, _title, _label;
         private DateTime _datePeremption;
         private bool _bio;
@@ -24,6 +24,18 @@ namespace Foodsharing.Entities
             set
             {
                 _quantite = value;
+            }
+        }
+        public int IdProduit
+        {
+            get
+            {
+                return _idProduit;
+            }
+
+            set
+            {
+                _idProduit = value;
             }
         }
         public string Nom
