@@ -78,7 +78,7 @@ namespace Foodsharing.Models
                 _etat = value;
             }
         }
-        [Required]
+
         public string Src
         {
             get
@@ -130,7 +130,7 @@ namespace Foodsharing.Models
                 _datePeremption = value;
             }
         }
-        [Required]
+
         public DateTime DateProposition
         {
             get
@@ -143,7 +143,7 @@ namespace Foodsharing.Models
                 _dateProposition = value;
             }
         }
-        [Required]
+
         public DateTime DateFin
         {
             get
@@ -182,7 +182,7 @@ namespace Foodsharing.Models
                 _marque = value;
             }
         }
-        [Required]
+
         public string Title
         {
             get

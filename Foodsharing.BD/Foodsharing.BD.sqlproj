@@ -80,7 +80,6 @@
     <Build Include="ProcéduresStockées\SP_DonateProduct_Insert.sql" />
     <Build Include="Vues\V_GetSixLatestProducts.sql" />
     <Build Include="Vues\V_GetAllProducts.sql" />
-    <Build Include="ProcéduresStockées\SP_GetSixLatestProducts.sql" />
     <Build Include="ProcéduresStockées\SP_GetTypeProduit.sql" />
   </ItemGroup>
   <ItemGroup>

@@ -5,29 +5,6 @@
 }
 @*@Html.ActionLink("My profile", "MyProfile", "Home")*@
 @Styles.Render("~/Content/profil")
-@*<form method="post" enctype="multipart/form-data">
-        @Html.AntiForgeryToken()
-
-        <div class="form-horizontal">
-            <div class="col-md-8 col-md-offset-3">
-                <div class="row">
-                    <div class="col-xs-12 col-md-12">
-                        <div class="form-group">
-                            <input type="file" name="FilePicture" class="form-control" />
-                            @Html.LabelFor(model => model.Photo, htmlAttributes: new { @class = "control-label col-md-2" })
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-12">
-                    <input type="submit" value="Save" class="btn btn-warning" />
-                </div>
-            </div>
-        </div>
-    </form>*@
-
-
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -43,11 +20,11 @@
                     @Html.LabelFor(model => model.Photo, htmlAttributes: new { @class = "control-label col-md-2" })
 
                 </div>
-
+                <div>
                     <a href="~/Member/Home/MyProfile" class="file btn btn-lg btn-primary">
                         Confirm
                     </a>
-
+                </div>
             </div>
             <div class="col-md-6">
                 <div class="profile-head">
@@ -81,7 +58,8 @@
                     <a href="/Member/Profil/OfferedProducts">Offered Products</a><br />
 
                     <p>OTHERS</p>
-                    <a href="/Home/Index">Log Out</a>
+                    <a href="/Home/Index">Log Out</a><br />
+                    <a href="/Member/Home/MyProfile">Back</a>
                 </div>
             </div>
             <div class="col-md-8">

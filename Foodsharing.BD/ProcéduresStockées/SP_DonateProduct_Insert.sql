@@ -10,7 +10,6 @@
 	@title NVARCHAR(50),
 	@src NVARCHAR(250),
 	@labelType NVARCHAR(50),
-	@dateProposition date,
 	@dateFin date,
 	@idAdresse INT,
 	@idUtilisateur INT
@@ -40,6 +39,6 @@ DECLARE @idMarque INT, @idEtat INT,@idPhoto INT, @idType INT, @idProduit INT
 
 	INSERT INTO[PropositionProduit]([IdUtilisateur], [IdProduit], [DateProposition], [DateFin] )
 	OUTPUT inserted.IdProposition
-	VALUES (@idUtilisateur, @idProduit, @dateProposition, @dateFin)
+	VALUES (@idUtilisateur, @idProduit, GETDATE(), @dateFin)
 
 RETURN 0

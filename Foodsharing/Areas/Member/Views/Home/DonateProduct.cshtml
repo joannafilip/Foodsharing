@@ -4,50 +4,96 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>DonateProduct</h2>
-
-<form class="form-wrapper" method="post">
-    @Html.AntiForgeryToken()
-    <input type="text" name="Nom" class="form-control" placeholder="Nom">
-    @Html.ValidationMessageFor(model => model.DonateProduct.Nom, "", new { @class = "text-danger" })
-    <input type="text" name="Description" class="form-control" placeholder="Description">
-    @Html.ValidationMessageFor(model => model.DonateProduct.Description, "", new { @class = "text-danger" })
-    <input type="checkbox" name="Bio" class="form-control" placeholder="Bio">
-    @Html.ValidationMessageFor(model => model.DonateProduct.Bio, "", new { @class = "text-danger" })
-    <input type="date" name="DatePeremption" class="form-control" placeholder="Date peremption">
-    @Html.ValidationMessageFor(model => model.DonateProduct.DatePeremption, "", new { @class = "text-danger" })
-    <input type="date" name="DateFin" class="form-control" placeholder="Date fin">
-    @Html.ValidationMessageFor(model => model.DonateProduct.DateFin, "", new { @class = "text-danger" })
-    <input type="date" name="DateProposition" class="form-control" placeholder="Date Proposition">
-    @Html.ValidationMessageFor(model => model.DonateProduct.DateProposition, "", new { @class = "text-danger" })
-    <input type="text" name="Etat" class="form-control" placeholder="Etat">
-    @Html.ValidationMessageFor(model => model.DonateProduct.Etat, "", new { @class = "text-danger" })
-    <input type="text" name="Src" class="form-control" placeholder="Photo">
-    @Html.ValidationMessageFor(model => model.DonateProduct.Src, "", new { @class = "text-danger" })
-    <input type="number" name="Quantite" class="form-control" placeholder="Quantité">
-    @Html.ValidationMessageFor(model => model.DonateProduct.Quantite, "", new { @class = "text-danger" })
-
-
     @*<label for="IdType">Choose a type: </label>
-    <select name="IdType">
+        <select name="IdType">
 
-        @foreach (Foodsharing.Models.ProfilModel item in Model.ListDonateProducts)
-        {
-            <option value=@item.DonateProduct.IdType>@item.DonateProduct.Type</option>
-        }
+            @foreach (Foodsharing.Models.ProfilModel item in Model.ListDonateProducts)
+            {
+                <option value=@item.DonateProduct.IdType>@item.DonateProduct.Type</option>
+            }
 
-    </select>*@
-    <input type="text" name="Type" class="form-control" placeholder="Type">
-    @Html.ValidationMessageFor(model => model.DonateProduct.Type, "", new { @class = "text-danger" })
-    <input type="text" name="Pays" class="form-control" placeholder="Pays">
-    @Html.ValidationMessageFor(model => model.DonateProduct.Pays, "", new { @class = "text-danger" })
-    <input type="text" name="Title" class="form-control" placeholder="Title photo">
-    @Html.ValidationMessageFor(model => model.DonateProduct.Title, "", new { @class = "text-danger" })
-    <input type="text" name="Marque" class="form-control" placeholder="Marque">
-    @Html.ValidationMessageFor(model => model.DonateProduct.Marque, "", new { @class = "text-danger" })
-    <button type="submit" class="btn btn-primary">Send <i class="fa fa-envelope-open-o"></i></button>
-</form>
+        </select>*@
+
+@Styles.Render("~/Content/signUp")
+<div class="container d-flex justify-content-center">
+    <div class="row my-5">
+        <div class="col-md-6 text-left text-white lcol">
+            <div class="greeting">
+                <h3> <span class="txt">Donate Your Product</span></h3>
+            </div>
+            <div class="footerS">
+                <div class="socials d-flex flex-row justify-content-between text-white">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 rcol">
+            <form class="sign-up" method="post" enctype="multipart/form-data">
+                @Html.AntiForgeryToken()
+                <div class="form-group fone mt-2">
+                    <input type="text" name="Nom" class="form-control" placeholder="Title">
+                    @Html.ValidationMessageFor(model => model.DonateProduct.Nom, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group fone mt-2">
+                    <input type="text" name="Description" class="form-control" placeholder="Description">
+                    @Html.ValidationMessageFor(model => model.DonateProduct.Description, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group fone mt-2">
+                    <input type="checkbox" name="Bio" class="form-control" placeholder="Bio" title="Bio">
+                    @Html.ValidationMessageFor(model => model.DonateProduct.Bio, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group fone mt-2">
+                    <input type="date" name="DatePeremption" class="form-control" title="Expiration date">
+                    @Html.ValidationMessageFor(model => model.DonateProduct.DatePeremption, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group fone mt-2">
+                    <input type="date" name="DateFin" class="form-control" title="End Date of Post">
+                    @Html.ValidationMessageFor(model => model.DonateProduct.DateFin, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group fone mt-2">
+                    <input type="text" name="Etat" class="form-control" placeholder="Condition">
+                    @Html.ValidationMessageFor(model => model.DonateProduct.Etat, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group fone mt-2">
+                    <input type="text" name="Src" class="form-control" placeholder="Photo">
+                    @Html.ValidationMessageFor(model => model.DonateProduct.Src, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group fone mt-2">
+                    <input type="number" name="Quantite" class="form-control" placeholder="Quantity">
+                    @Html.ValidationMessageFor(model => model.DonateProduct.Quantite, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group fone mt-2">
+                    <input type="text" name="Type" class="form-control" placeholder="Type">
+                    @Html.ValidationMessageFor(model => model.DonateProduct.Type, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group fone mt-2">
+                    <input type="text" name="Pays" class="form-control" placeholder="Country">
+                    @Html.ValidationMessageFor(model => model.DonateProduct.Pays, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group fone mt-2">
+                    <input type="text" name="Title" class="form-control" placeholder="Title Photo">
+                    @Html.ValidationMessageFor(model => model.DonateProduct.Title, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group fone mt-2">
+                    <input type="text" name="Marque" class="form-control" placeholder="Brand">
+                    @Html.ValidationMessageFor(model => model.DonateProduct.Marque, "", new { @class = "text-danger" })
+                </div>
+                <div><button type="submit" class="btn btn-success mt-5">Publish</button></div>
+            </form>
+
+            @if (ViewBag.SuccessMessage != null)
+            {
+                @:<div class="alert alert-success">@ViewBag.SuccessMessage</div>
+            }
+
+            @if (ViewBag.ErrorMessage != null)
+            {
+                @:<div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+            }
+            <p class="exist mt-4"><span><a href="/Member/Home/Myprofile">Back</a></span></p>
+        </div>
+    </div>
+</div>
 
 <div>
     @Html.ActionLink("Back", "MyProfile")
-</div>-->
+</div>

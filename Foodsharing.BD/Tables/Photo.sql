@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[Photo]
 (
 	[IdPhoto] INT NOT NULL IDENTITY, 
-    [Src] NVARCHAR(250) NOT NULL,
-	[Title] NVARCHAR(50) NOT NULL,
+    [Src] NVARCHAR(250) NULL,
+	[Title] NVARCHAR(50) NULL,
 	PRIMARY KEY CLUSTERED ([IdPhoto])
 
 	

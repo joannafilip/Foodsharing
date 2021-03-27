@@ -79,7 +79,6 @@ namespace Foodsharing.Repositories
             dpe.Src= pf.DonateProduct.Src;
             dpe.Description = pf.DonateProduct.Description;
             dpe.LabelEtat = pf.DonateProduct.Etat;
-            dpe.DateProposition = pf.DonateProduct.DateProposition;
             dpe.Title = pf.DonateProduct.Title;
             dpe.Pays = pf.DonateProduct.Pays;
             dpe.NomMarque = pf.DonateProduct.Marque;

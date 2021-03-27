@@ -44,7 +44,6 @@ namespace Foodsharing.Repositories
                                                              ,@title
                                                              ,@src
                                                              ,@labelType
-                                                             ,@dateProposition
                                                              ,@dateFin
                                                              ,@idAdresse
                                                              ,@idUtilisateur";

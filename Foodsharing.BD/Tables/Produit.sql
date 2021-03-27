@@ -8,7 +8,7 @@
     [IdMarque]       INT            NOT NULL,
     [IdType]         INT            NOT NULL,
     [IdEtat]         INT            NOT NULL,
-    [IdPhoto]        INT            NOT NULL,
+    [IdPhoto]        INT            NULL,
     [IdAdresse]      INT            NOT NULL,
     PRIMARY KEY CLUSTERED ([IdProduit] ASC),
     CONSTRAINT [FK_Produit_Adresse] FOREIGN KEY ([IdAdresse]) REFERENCES [dbo].[Adresse] ([IdAdresse]),
