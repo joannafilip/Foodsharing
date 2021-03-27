@@ -261,9 +261,10 @@ namespace Foodsharing.Repositories
             pc.Text= oneProductPage.Description;
             pc.Etat = oneProductPage.Etat;
             pc.DateProposition = oneProductPage.DateProposition;
-            pc.Title = oneProductPage.Title;
             pc.Marque = oneProductPage.Marque;
             pc.IdProduit = oneProductPage.IdProduit;
+            pc.Prenom = oneProductPage.Prenom;
+            pc.Nom = oneProductPage.Nom;
 
             return pc;
         }
