@@ -20,7 +20,7 @@ namespace Foodsharing.Models
         private Widget _categorie;
         private ProductContent _targetProduct;
         private int _maxProduct, _maxPage;
-       
+
 
         public void paginateProduct(int page = 1, string searchString = null, string type = "", string sortOrder = "")
         {

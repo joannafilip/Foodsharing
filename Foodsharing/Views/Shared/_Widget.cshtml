@@ -56,7 +56,7 @@
                 <ul>
                     @foreach (Foodsharing.Models.Widget item in Model.PopularCategorie)
                     {
-                        <li><a href="#">@item.UnderTitle<span>(@item.Number)</span></a></li>
+                        <li><a href="@Url.Action("Product", "Home", new { type = item.UnderTitle })">@item.UnderTitle<span>(@item.Number)</span></a></li>
                     }
                 </ul>
             </div><!-- end link-widget -->
