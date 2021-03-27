@@ -268,18 +268,18 @@ namespace Foodsharing.Repositories
             return pc;
         }
 
-        public List<ProfilModel> SelectAllTypes()
+        public List<DonateProductModel> SelectAllTypes()
         {
-            List<ProfilModel> lpm = new List<ProfilModel>();
+            List<DonateProductModel> dpm = new List<DonateProductModel>();
             List<TypeEntity> allTypes = _typeRepo.Get();
             foreach (TypeEntity type in allTypes)
             {
-                ProfilModel pm = new ProfilModel();
-                pm.DonateProduct.Type= type.Label;
-                pm.DonateProduct.IdType = type.IdType;
-                lpm.Add(pm);
+                DonateProductModel pm = new DonateProductModel();
+                pm.Type= type.Label;
+                pm.IdType = type.IdType;
+                dpm.Add(pm);
             }
-            return lpm;
+            return dpm;
         }
 
     }

@@ -19,7 +19,8 @@ namespace Foodsharing.Areas.Member.Controllers
         [HttpGet]
         public ActionResult DonateProduct()
         {
-
+            DataContext ctx = new DataContext(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
+            SessionUtils.ConnectedUser.ListDonateProducts = ctx.SelectAllTypes();
             return View(SessionUtils.ConnectedUser);
         }
         [HttpPost]
@@ -38,6 +39,7 @@ namespace Foodsharing.Areas.Member.Controllers
                 else
                 {
                     SessionUtils.ConnectedUser.DonateProduct = pm;
+                 
                     ctx.InsertProduct(SessionUtils.ConnectedUser);
                     return RedirectToAction("Index", "Home", new { area = "" });
             }
