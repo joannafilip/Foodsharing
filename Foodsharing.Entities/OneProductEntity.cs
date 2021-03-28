@@ -9,7 +9,7 @@ namespace Foodsharing.Entities
     public class OneProductEntity
     {
         private int _quantite, _idProduit;
-        private string _nomProduit, _description, _marque, _utilisateurNom, _prenom, _title, _label, _etat, _src;
+        private string _nomProduit, _description, _marque, _utilisateurNom, _prenom, _title, _label, _etat, _photo;
         private DateTime _datePeremption, _dateProposition;
         private bool _bio;
 
@@ -86,16 +86,16 @@ namespace Foodsharing.Entities
                 _etat = value;
             }
         }
-        public string Src
+        public string Photo
         {
             get
             {
-                return _src;
+                return _photo;
             }
 
             set
             {
-                _src= value;
+                _photo = value;
             }
         }
 

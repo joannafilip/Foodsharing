@@ -7,4 +7,4 @@ FROM     dbo.Produit INNER JOIN
                   dbo.PropositionProduit ON dbo.Produit.IdProduit = dbo.PropositionProduit.IdProduit INNER JOIN
                   dbo.Utilisateur ON dbo.PropositionProduit.IdUtilisateur = dbo.Utilisateur.IdUtilisateur INNER JOIN
                   dbo.Photo ON dbo.Photo.IdPhoto = dbo.Produit.IdPhoto
-ORDER BY dbo.Produit.DatePeremption DESC
+ORDER BY dbo.PropositionProduit.DateProposition DESC

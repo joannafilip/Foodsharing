@@ -75,10 +75,8 @@ namespace Foodsharing.Repositories
             dpe.NameProduct = pf.DonateProduct.Nom;
             dpe.Bio = pf.DonateProduct.Bio;
             dpe.DatePeremption = pf.DonateProduct.DatePeremption;
-            //dpe.Src= pf.DonateProduct.Src;
             dpe.Description = pf.DonateProduct.Description;
             dpe.LabelEtat = pf.DonateProduct.Etat;
-            //dpe.Title = pf.DonateProduct.Title;
             dpe.Pays = pf.DonateProduct.Pays;
             dpe.NomMarque = pf.DonateProduct.Marque;
 
@@ -144,6 +142,7 @@ namespace Foodsharing.Repositories
                 pc.Prenom = prod.Prenom;
                 pc.Type = prod.Type;
                 pc.IdProduit = prod.IdProduit;
+                pc.Image = prod.Photo;
 
                 lpc.Add(pc);
             }
@@ -257,7 +256,7 @@ namespace Foodsharing.Repositories
             pc.Title = oneProductPage.NomProduit;
             pc.Bio = oneProductPage.Bio;
             pc.DatePeremption = oneProductPage.DatePeremption;
-            pc.Image = oneProductPage.Src;
+            pc.Image = oneProductPage.Photo;
             pc.Text= oneProductPage.Description;
             pc.Etat = oneProductPage.Etat;
             pc.DateProposition = oneProductPage.DateProposition;
