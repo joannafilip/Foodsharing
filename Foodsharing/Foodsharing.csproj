@@ -260,7 +260,21 @@
     <Content Include="upload\i7.jpg" />
     <Content Include="upload\i8.jpg" />
     <Content Include="upload\i9.jpg" />
+    <Content Include="upload\Products\1003\poires.jpg" />
+    <Content Include="upload\Products\1004\carottes.jpg" />
+    <Content Include="upload\Products\1006\concombre.jpg" />
+    <Content Include="upload\Products\1015\epinards.jpg" />
+    <Content Include="upload\Products\1016\champ.jpg" />
+    <Content Include="upload\Products\1017\gouda.jpg" />
     <Content Include="upload\Products\1\1.jpg" />
+    <Content Include="upload\Products\2004\chocolateW.jpg" />
+    <Content Include="upload\Products\2\2.jpg" />
+    <Content Include="upload\Products\3002\haricots.jpg" />
+    <Content Include="upload\Products\3003\carottes.jpg" />
+    <Content Include="upload\Products\3004\epinards.jpg" />
+    <Content Include="upload\Products\3006\concombre.jpg" />
+    <Content Include="upload\Products\3007\2.jpg" />
+    <Content Include="upload\Products\4002\chocolateD.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

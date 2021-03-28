@@ -74,15 +74,12 @@ namespace Foodsharing.Models
             Instagram = new Widget();
             Instagram.Title = "Instagram Feed";
             InstagramPhoto = new List<Widget>();
-            InstagramPhoto.Add(new Widget() { Image = "i1.jpg" });
-            InstagramPhoto.Add(new Widget() { Image = "i2.jpg" });
-            InstagramPhoto.Add(new Widget() { Image = "i3.jpg" });
-            InstagramPhoto.Add(new Widget() { Image = "i4.jpg" });
-            InstagramPhoto.Add(new Widget() { Image = "i5.jpg" });
-            InstagramPhoto.Add(new Widget() { Image = "i6.jpg" });
-            InstagramPhoto.Add(new Widget() { Image = "i7.jpg" });
-            InstagramPhoto.Add(new Widget() { Image = "i8.jpg" });
-            InstagramPhoto.Add(new Widget() { Image = "i9.jpg" });
+
+            for (int i = 1; i<10; i++)
+            {
+                InstagramPhoto.Add(new Widget() { Image = "i"+i+".jpg" });
+            }
+            
 
             //Popular Categories
             PopularCategorie = ctx.GetAllTypes();
