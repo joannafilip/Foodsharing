@@ -1,4 +1,4 @@
-﻿@model Foodsharing.Models.DonateProductModel
+﻿@*@model Foodsharing.Models.DonateProductModel*@
 
 @{
     ViewBag.Title = "OfferedProducts";
@@ -7,3 +7,38 @@
 
 <h2>OfferedProducts</h2>
 
+@foreach (Foodsharing.Models.DonateProductModel item in Model)
+{
+    <div class="blog-box row">
+        <div class="col-md-4">
+            <div class="post-media">
+                @*<a href="@Url.Action("SingleProductPage", "Home", new { id = @item.IdProduit})" title="">*@
+                    <img src="/upload/garden_sq_04.jpg" alt="" class="img-fluid">
+                    <div class="hovereffect"></div>
+                @*</a>*@
+            </div><!-- end media -->
+        </div><!-- end col -->
+
+        <div class="blog-meta big-meta col-md-8">
+            <span class="bg-aqua"><a href="garden-category.html" title="">@item.Type</a></span>
+            @*<h4><a href="@Url.Action("SingleProductPage", "Home", new { id = @item.IdProduit})" title="">@item.Title</a></h4>*@
+            <p>@item.Nom</p>
+
+
+            @*@if (@item.Bio == true)
+            {
+                @:<small><a href="garden-category.html" title=""><i class="fa fa-eye"></i> Bio</a></small>
+            }
+            else
+            {
+                @:<small><a href="garden-category.html" title=""><i class="fa fa-eye"></i></a></small>
+            }
+
+
+            <small><a href="garden-single.html" title="">Expiration date: @item.DatePeremption.ToString("d MMM yyyy")</a></small>
+            <small><a href="garden-single.html" title="">Quantity: @item.Quantite</a></small>
+            <small><a href="#" title="">@item.Prenom @item.Nom</a></small>*@
+        </div><!-- end meta -->
+    </div><!-- end blog-box -->
+    <hr class="invis">
+}

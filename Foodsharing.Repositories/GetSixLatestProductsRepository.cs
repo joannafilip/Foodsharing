@@ -32,6 +32,12 @@ namespace Foodsharing.Repositories
 
             return base.Get(requete);
         }
+        public List<GetSixLatestPrductsEntity> GetAllProductsFromMembre(int idUtilisateur)
+        {
+            string requete = "EXEC [dbo].[SP_RecupProduitsMembre]" + @idUtilisateur;
+
+            return base.Get(requete);
+        }
 
         public GetSixLatestPrductsEntity GetOne(int PK)
         {

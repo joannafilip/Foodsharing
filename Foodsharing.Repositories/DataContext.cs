@@ -281,5 +281,19 @@ namespace Foodsharing.Repositories
             return dpm;
         }
 
+
+        public List<DonateProductModel> GetProductsFromMembre(ProfilModel pm)
+        {
+            List<DonateProductModel> dpm= new List<DonateProductModel>();
+            List<GetSixLatestPrductsEntity> productsMembre = ((GetSixLatestProductsRepository)_getSixRepo).GetAllProductsFromMembre(pm.IdUser);
+            foreach (GetSixLatestPrductsEntity prod in productsMembre)
+            {
+                DonateProductModel dp = new DonateProductModel();
+                dp.Nom = prod.NomProduit;
+                dpm.Add(dp);
+            }
+            return dpm;
+        }
+
     }
 }
