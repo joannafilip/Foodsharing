@@ -41,8 +41,6 @@ namespace Foodsharing.Repositories
                                                              ,@nomMarque
                                                              ,@pays
                                                              ,@labelEtat
-                                                             ,@title
-                                                             ,@src
                                                              ,@idType
                                                              ,@idAdresse
                                                              ,@idUtilisateur";

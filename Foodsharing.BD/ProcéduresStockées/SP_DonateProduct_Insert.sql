@@ -7,8 +7,6 @@
 	@nomMarque NVARCHAR(150),
 	@pays NVARCHAR(50),
 	@labelEtat NVARCHAR(50),
-	@title NVARCHAR(50),
-	@src NVARCHAR(250),
 	@idType INT,
 	@idAdresse INT,
 	@idUtilisateur INT
@@ -25,7 +23,7 @@ DECLARE @idMarque INT, @idEtat INT,@idPhoto INT, @idProduit INT
 	SET @idEtat= @@IDENTITY
 
 	INSERT INTO[Photo]([Title], [Src])
-	VALUES (@title,@src)
+	VALUES (null,null)
 	SET @idPhoto= @@IDENTITY
 
 	INSERT INTO[Produit]([Nom], [DatePeremption],[Quantite], [Description], [Bio], [IdMarque], [IdType], [IdEtat], [IdPhoto], [IdAdresse])

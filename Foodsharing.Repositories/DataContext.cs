@@ -74,12 +74,11 @@ namespace Foodsharing.Repositories
             dpe.IdType = pf.DonateProduct.IdType;
             dpe.NameProduct = pf.DonateProduct.Nom;
             dpe.Bio = pf.DonateProduct.Bio;
-            //dpe.DateFin = pf.DonateProduct.DateFin;
             dpe.DatePeremption = pf.DonateProduct.DatePeremption;
-            dpe.Src= pf.DonateProduct.Src;
+            //dpe.Src= pf.DonateProduct.Src;
             dpe.Description = pf.DonateProduct.Description;
             dpe.LabelEtat = pf.DonateProduct.Etat;
-            dpe.Title = pf.DonateProduct.Title;
+            //dpe.Title = pf.DonateProduct.Title;
             dpe.Pays = pf.DonateProduct.Pays;
             dpe.NomMarque = pf.DonateProduct.Marque;
 
