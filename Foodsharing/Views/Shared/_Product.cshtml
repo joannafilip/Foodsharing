@@ -13,7 +13,8 @@
             </div><!-- end col -->
 
             <div class="blog-meta big-meta col-md-8">
-                <span class="bg-aqua"><a href="garden-category.html" title="">@item.Type</a></span>
+                <span class="bg-aqua"><a href="@Url.Action("Product", "Home", new { type = item.Type})" title="">@item.Type</a></span>
+                
                 <h4><a href="@Url.Action("SingleProductPage", "Home", new { id = @item.IdProduit})" title="">@item.Title</a></h4>
                 <p>@item.Text</p>
 
