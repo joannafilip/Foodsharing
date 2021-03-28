@@ -44,7 +44,6 @@ namespace Foodsharing.Repositories
                                                              ,@title
                                                              ,@src
                                                              ,@idType
-                                                             ,@dateFin
                                                              ,@idAdresse
                                                              ,@idUtilisateur";
             return base.Insert(toInsert, requete);

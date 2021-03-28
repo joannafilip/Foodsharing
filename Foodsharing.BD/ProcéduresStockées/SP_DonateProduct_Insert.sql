@@ -10,7 +10,6 @@
 	@title NVARCHAR(50),
 	@src NVARCHAR(250),
 	@idType INT,
-	@dateFin date,
 	@idAdresse INT,
 	@idUtilisateur INT
 
@@ -29,15 +28,12 @@ DECLARE @idMarque INT, @idEtat INT,@idPhoto INT, @idProduit INT
 	VALUES (@title,@src)
 	SET @idPhoto= @@IDENTITY
 
-	--INSERT INTO[Type]([Label])
-	--VALUES (@idType)
-
 	INSERT INTO[Produit]([Nom], [DatePeremption],[Quantite], [Description], [Bio], [IdMarque], [IdType], [IdEtat], [IdPhoto], [IdAdresse])
 	VALUES (@nameProduct,@datePeremption, @quantite, @description, @bio,@idMarque, @idType, @idEtat, @idPhoto, @idAdresse)
 	SET @idProduit= @@IDENTITY
 
 	INSERT INTO[PropositionProduit]([IdUtilisateur], [IdProduit], [DateProposition], [DateFin] )
 	OUTPUT inserted.IdProposition
-	VALUES (@idUtilisateur, @idProduit, GETDATE(), @dateFin)
+	VALUES (@idUtilisateur, @idProduit, GETDATE(), DATEADD(WEEK, 1,GETDATE()))
 
 RETURN 0
