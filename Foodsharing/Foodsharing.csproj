@@ -147,6 +147,7 @@
     <Content Include="css\style.css" />
     <Content Include="css\styleLogin.css" />
     <Content Include="css\styleProductSinglePage.css" />
+    <Content Include="css\styleProductsUser.css" />
     <Content Include="css\styleProfil.css" />
     <Content Include="css\styleSignUp.css" />
     <Content Include="css\version\garden.css" />

@@ -4,41 +4,47 @@
     ViewBag.Title = "OfferedProducts";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@Styles.Render("~/Content/productsUser")
 
-<h2>OfferedProducts</h2>
+<div class="container py-5">
+    <div class="row text-center text-white mb-5">
+        <div class="col-lg-7 mx-auto">
+            <h1 class="display-4">Product List</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <!-- List group-->
+            <ul class="list-group shadow">
+                <!-- list group item-->
+                @foreach (Foodsharing.Models.DonateProductModel item in Model)
+                {
+                    <li class="list-group-item">
+                        <!-- Custom content-->
+                        <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                            <div class="media-body order-2 order-lg-1">
+                                <h5 class="mt-0 font-weight-bold mb-2 color-green">@item.Nom</h5>
+                                <p class="font-italic text-muted mb-0 small"> @item.Description| Quantity: @item.Quantite | Brand: @item.Marque | @item.Type | @item.DateProposition.ToString("d MMM yyyy")</p>
+                                <div class="d-flex align-items-center justify-content-between mt-1">
+                                    <h6 class="font-weight-bold my-2"></h6>
+                                    <ul class="list-inline small">
+                                        @if (@item.Bio == true)
+                                        {
+                                            @:<li class="list-inline-item m-0">Bio</li>
+                                        }
+                                        else
+                                        {
+                                            @:<li class="list-inline-item m-0"></li>
+                                        }
 
-@foreach (Foodsharing.Models.DonateProductModel item in Model)
-{
-    <div class="blog-box row">
-        <div class="col-md-4">
-            <div class="post-media">
-                @*<a href="@Url.Action("SingleProductPage", "Home", new { id = @item.IdProduit})" title="">*@
-                    <img src="/upload/garden_sq_04.jpg" alt="" class="img-fluid">
-                    <div class="hovereffect"></div>
-                @*</a>*@
-            </div><!-- end media -->
-        </div><!-- end col -->
-
-        <div class="blog-meta big-meta col-md-8">
-            <span class="bg-aqua"><a href="garden-category.html" title="">@item.Type</a></span>
-            @*<h4><a href="@Url.Action("SingleProductPage", "Home", new { id = @item.IdProduit})" title="">@item.Title</a></h4>*@
-            <p>@item.Nom</p>
-
-
-            @*@if (@item.Bio == true)
-            {
-                @:<small><a href="garden-category.html" title=""><i class="fa fa-eye"></i> Bio</a></small>
-            }
-            else
-            {
-                @:<small><a href="garden-category.html" title=""><i class="fa fa-eye"></i></a></small>
-            }
-
-
-            <small><a href="garden-single.html" title="">Expiration date: @item.DatePeremption.ToString("d MMM yyyy")</a></small>
-            <small><a href="garden-single.html" title="">Quantity: @item.Quantite</a></small>
-            <small><a href="#" title="">@item.Prenom @item.Nom</a></small>*@
-        </div><!-- end meta -->
-    </div><!-- end blog-box -->
-    <hr class="invis">
-}
+                                      
+                                    </ul>
+                                </div>
+                            @*</div><img class="im" src="https://i.imgur.com/KFojDGa.jpg" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">*@
+                        </div> <!-- End -->
+                    </li>
+                }
+                </ul> <!-- End -->
+        </div>
+    </div>
+</div>

@@ -290,6 +290,14 @@ namespace Foodsharing.Repositories
             {
                 DonateProductModel dp = new DonateProductModel();
                 dp.Nom = prod.NomProduit;
+                dp.Description = prod.Description;
+                dp.DateProposition = prod.DateProposition;
+                dp.Bio = prod.Bio;
+                dp.Quantite = prod.Quantite;
+                dp.Type = prod.Type;
+                dp.DateProposition = prod.DatePeremption;
+                dp.Marque = prod.Marque;
+
                 dpm.Add(dp);
             }
             return dpm;

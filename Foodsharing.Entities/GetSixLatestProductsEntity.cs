@@ -10,7 +10,7 @@ namespace Foodsharing.Entities
     {
         private int _quantite, _idProduit;
         private string _nomProduit, _description, _marque, _utilisateurNom, _prenom, _title, _label;
-        private DateTime _datePeremption;
+        private DateTime _datePeremption, _dateProposition;
         private bool _bio;
 
 
@@ -122,6 +122,18 @@ namespace Foodsharing.Entities
             set
             {
                 _datePeremption = value;
+            }
+        }
+        public DateTime DateProposition
+        {
+            get
+            {
+                return _dateProposition;
+            }
+
+            set
+            {
+                _dateProposition = value;
             }
         }
 
