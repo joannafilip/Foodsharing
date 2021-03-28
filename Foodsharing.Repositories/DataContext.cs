@@ -191,6 +191,7 @@ namespace Foodsharing.Repositories
                 pc.Prenom = prod.Prenom;
                 pc.Type = prod.Type;
                 pc.IdProduit = prod.IdProduit;
+                pc.Image = prod.Photo;
 
                 lpc.Add(pc);
             }
@@ -241,6 +242,7 @@ namespace Foodsharing.Repositories
                     pc.Prenom = prod.Prenom;
                     pc.Type = prod.Type;
                     pc.IdProduit = prod.IdProduit;
+                    pc.Image = prod.Photo;
 
                 lpc.Add(pc);
             }

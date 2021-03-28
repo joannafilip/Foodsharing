@@ -1,6 +1,6 @@
 ﻿CREATE VIEW [dbo].[V_GetAllProducts]
 	AS 
-    SELECT dbo.PropositionProduit.IdUtilisateur, dbo.PropositionProduit.IdProduit AS IdProduit, dbo.Utilisateur.Nom, dbo.Utilisateur.Prenom, dbo.Type.Label AS Type, dbo.Produit.Nom AS NomProduit, dbo.Produit.DatePeremption, dbo.Produit.Quantite, dbo.Produit.Description, dbo.Produit.Bio, dbo.Etat.[Label] AS Etat, dbo.Photo.Src, dbo.Marque.Nom AS Marque, dbo.PropositionProduit.DateProposition
+    SELECT dbo.PropositionProduit.IdUtilisateur, dbo.PropositionProduit.IdProduit AS IdProduit, dbo.Utilisateur.Nom, dbo.Utilisateur.Prenom, dbo.Type.Label AS Type, dbo.Produit.Nom AS NomProduit, dbo.Produit.DatePeremption, dbo.Produit.Quantite, dbo.Produit.Description, dbo.Produit.Bio, dbo.Etat.[Label] AS Etat, dbo.Photo.Src AS Photo, dbo.Marque.Nom AS Marque, dbo.PropositionProduit.DateProposition
     FROM dbo.Produit 
     INNER JOIN
     dbo.Type ON dbo.Produit.IdType = dbo.Type.IdType 

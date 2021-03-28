@@ -260,6 +260,7 @@
     <Content Include="upload\i7.jpg" />
     <Content Include="upload\i8.jpg" />
     <Content Include="upload\i9.jpg" />
+    <Content Include="upload\Products\1\1.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
