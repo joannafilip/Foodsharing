@@ -71,7 +71,7 @@ namespace Foodsharing.Repositories
             dpe.IdUtilisateur = pf.IdUser;
             dpe.IdAdresse = pf.IdAdresse;
             dpe.Quantite = pf.DonateProduct.Quantite;
-            dpe.LabelType = pf.DonateProduct.Type;
+            dpe.IdType = pf.DonateProduct.IdType;
             dpe.NameProduct = pf.DonateProduct.Nom;
             dpe.Bio = pf.DonateProduct.Bio;
             dpe.DateFin = pf.DonateProduct.DateFin;

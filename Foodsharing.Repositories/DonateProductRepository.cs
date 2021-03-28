@@ -43,7 +43,7 @@ namespace Foodsharing.Repositories
                                                              ,@labelEtat
                                                              ,@title
                                                              ,@src
-                                                             ,@labelType
+                                                             ,@idType
                                                              ,@dateFin
                                                              ,@idAdresse
                                                              ,@idUtilisateur";

@@ -8,7 +8,7 @@ namespace Foodsharing.Entities
 {
    public class DonateProductEntity
     {
-        private int _quantite, _idAdresse, _idUtilisateur;
+        private int _quantite, _idAdresse, _idUtilisateur, _idType;
         private string _nameProduct, _description, _labelType, _src, _labelEtat, _title, _nomMarque, _pays;
         private DateTime _datePeremption, _dateFin, _dateProposition;
         private bool _bio;
@@ -24,6 +24,19 @@ namespace Foodsharing.Entities
             set
             {
                 _quantite = value;
+            }
+        }
+
+        public int IdType
+        {
+            get
+            {
+                return _idType;
+            }
+
+            set
+            {
+                _idType = value;
             }
         }
         public string NameProduct

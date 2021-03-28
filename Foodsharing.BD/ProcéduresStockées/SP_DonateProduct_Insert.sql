@@ -9,13 +9,13 @@
 	@labelEtat NVARCHAR(50),
 	@title NVARCHAR(50),
 	@src NVARCHAR(250),
-	@labelType NVARCHAR(50),
+	@idType INT,
 	@dateFin date,
 	@idAdresse INT,
 	@idUtilisateur INT
 
 AS
-DECLARE @idMarque INT, @idEtat INT,@idPhoto INT, @idType INT, @idProduit INT
+DECLARE @idMarque INT, @idEtat INT,@idPhoto INT, @idProduit INT
 
 	INSERT INTO[Marque]([Nom], [Pays])
 	VALUES (@nomMarque, @pays)
@@ -29,9 +29,8 @@ DECLARE @idMarque INT, @idEtat INT,@idPhoto INT, @idType INT, @idProduit INT
 	VALUES (@title,@src)
 	SET @idPhoto= @@IDENTITY
 
-	INSERT INTO[Type]([Label])
-	VALUES (@labelType)
-	SET @idType = @@IDENTITY
+	--INSERT INTO[Type]([Label])
+	--VALUES (@idType)
 
 	INSERT INTO[Produit]([Nom], [DatePeremption],[Quantite], [Description], [Bio], [IdMarque], [IdType], [IdEtat], [IdPhoto], [IdAdresse])
 	VALUES (@nameProduct,@datePeremption, @quantite, @description, @bio,@idMarque, @idType, @idEtat, @idPhoto, @idAdresse)
