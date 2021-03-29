@@ -272,6 +272,7 @@
     <Content Include="upload\Products\3002\haricots.jpg" />
     <Content Include="upload\Products\3003\carottes.jpg" />
     <Content Include="upload\Products\3004\epinards.jpg" />
+    <Content Include="upload\Products\3005\gouda.jpg" />
     <Content Include="upload\Products\3006\concombre.jpg" />
     <Content Include="upload\Products\3007\2.jpg" />
     <Content Include="upload\Products\4002\chocolateD.jpg" />

@@ -9,19 +9,19 @@
                 <ol class="breadcrumb">
                     @if (ViewBag.NameSort == "name_asc")
                     {
-                        <li class="breadcrumb-item"><a href="@Url.Action("Product", "Home", new { sortOrder = "" })">Expiration Date</a></li>
+                        <li class="breadcrumb-item"><a href="@Url.Action("Product", "Home", new { sortOrder = "" })">Name</a></li>
                     }
-                    else if (ViewBag.NameSort == "name_desc")
+                    else
                     {
-                        <li class="breadcrumb-item"><a href="@Url.Action("Product", "Home", new { sortOrder = "name_desc" })">Expiration Date</a></li>
+                        <li class="breadcrumb-item"><a href="@Url.Action("Product", "Home", new { sortOrder = "name_desc" })">Name</a></li>
                     }
-                    else if (ViewBag.DateSort == "date_desc")
+                    @if (ViewBag.DateSort == "date_desc")
                     {
-                        <li class="breadcrumb-item"><a href="@Url.Action("Product", "Home", new { sortOrder = "date_desc" })"></a>Name</li>
+                <li class="breadcrumb-item"><a href="@Url.Action("Product", "Home", new { sortOrder = "date_desc" })"></a>Expiration Date</li>
                     }
-                    else if (ViewBag.DateSort == "date_asc")
+                    else
                     {
-                        <li class="breadcrumb-item"><a href="@Url.Action("Product", "Home", new { sortOrder = "date_asc" })">Name</a></li>
+                        <li class="breadcrumb-item"><a href="@Url.Action("Product", "Home", new { sortOrder = "date_asc" })">Expiration Date</a></li>
                     }
 
                 </ol>
