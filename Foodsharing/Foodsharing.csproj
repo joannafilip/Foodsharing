@@ -165,6 +165,9 @@
     <Content Include="images\loader.gif" />
     <Content Include="images\logo.png" />
     <Content Include="images\menubg.jpg" />
+    <Content Include="images\Users\5004\download.png" />
+    <Content Include="images\Users\8002\download.png" />
+    <Content Include="images\Users\9002\download.png" />
     <Content Include="images\version\foodLogo.png" />
     <Content Include="images\version\FoodSharing.png" />
     <Content Include="images\version\garden-footer-logo.png" />
@@ -312,7 +315,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Member\Data\" />
     <Folder Include="Areas\Member\Views\Shared\" />
-    <Folder Include="images\Users\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

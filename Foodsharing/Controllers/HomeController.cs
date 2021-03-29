@@ -60,8 +60,8 @@ namespace Foodsharing.Controllers
            
         public ActionResult Product(int page = 1, string searchString = null, string type = "", string sortOrder = "")
         {
-            ViewBag.DateSort = String.IsNullOrEmpty(sortOrder) ? "date_desc" : "date_asc";
-            ViewBag.NameSort = sortOrder == "name_desc" ? "" : "name_desc";
+            ViewBag.DateSort = String.IsNullOrEmpty(sortOrder) ? "date_asc" : "date_desc";
+            ViewBag.NameSort = sortOrder == "name_asc" ? "" : "name_asc";
             ProductViewModel productViewModel = new ProductViewModel();
             productViewModel.paginateProduct(page, searchString, type, sortOrder);
             return View(productViewModel);
