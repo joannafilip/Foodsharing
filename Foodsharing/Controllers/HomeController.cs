@@ -41,18 +41,18 @@ namespace Foodsharing.Controllers
 
                 if (ctx.SaveContact(contact))
                 {
-                    ViewBag.SuccessMessage = "Message bien envoyé";
+                    ViewBag.SuccessMessage = "Message sent";
                     return View();
                 }
                 else
                 {
-                    ViewBag.ErrorMessage = "Message non enregistré";
+                    ViewBag.ErrorMessage = "Message non sent";
                     return View();
                 }
             }
             else
             {
-                ViewBag.ErrorMessage = "Formulaire error";
+                ViewBag.ErrorMessage = "Form error";
                 return View();
             }
 
@@ -63,7 +63,7 @@ namespace Foodsharing.Controllers
             ViewBag.DateSort = String.IsNullOrEmpty(sortOrder) ? "date_asc" : "date_desc";
             ViewBag.NameSort = sortOrder == "name_asc" ? "" : "name_asc";
             ProductViewModel productViewModel = new ProductViewModel();
-            productViewModel.paginateProduct(page, searchString, type, sortOrder);
+            productViewModel.PaginateProduct(page, searchString, type, sortOrder);
             return View(productViewModel);
 
         }

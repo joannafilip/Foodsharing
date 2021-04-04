@@ -22,7 +22,7 @@ namespace Foodsharing.Models
         private int _maxProduct, _maxPage;
 
 
-        public void paginateProduct(int page = 1, string searchString = null, string type = "", string sortOrder = "")
+        public void PaginateProduct(int page = 1, string searchString = null, string type = "", string sortOrder = "")
         {
            
             Product = ctx.GetProductModelByPage(page, searchString, type, sortOrder);
